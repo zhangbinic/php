@@ -14,4 +14,7 @@ function p($result,$stop=false)
 	}
 }
 
-
+/**
+ * guitar songs
+ * 红雪莲
+ */

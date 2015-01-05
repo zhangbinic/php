@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取表格内input的name和它对应的标题</title>
+	<script src="jquery.js"></script>
+</head>
+<!-- 2015-1-5 16:55-->
+<body>
+	<table>
+		<tr>
+                <td>封头厚度mm(<span class="requireforminput">*</span>)</td>
+                <td><input class="width_149" name="head_thickness" value="{$result.head_thickness}" type="text"></td>
+                <td>内衬壁厚mm</td>
+                <td><input class="width_149" name="lining_thickness" value="{$result.lining_thickness}" type="text"></td>
+                <td>夹套厚度mm</td>
+                <td><input class="width_149" name="jacket_thickness" value="{$result.jacket_thickness}" type="text"></td>
+            </tr>
+            <tr>
+                <td>容积m3</td>
+                <td><input class="width_149" name="container_volume" value="{$result.container_volume}" type="text"></td>
+                <td>设备高(长)mm</td>
+                <td><input class="width_149" name="container_height" value="{$result.container_height}" type="text"></td>
+                <td>壳体重量kg</td>
+                <td><input class="width_149" name="case_weight" value="{$result.case_weight}" type="text"></td>
+            </tr>
+            <tr>
+                <td>内件重量kg</td>
+                <td><input class="width_149" name="inside_weight" value="{$result.inside_weight}" type="text"></td>
+                <td>充装重量kg</td>
+                <td><input class="width_149" name="fit_weight" value="{$result.fit_weight}" type="text"></td>
+                <td>有无保温绝热mm</td>
+                <td><input class="width_149" name="is_warm" value="{$result.is_warm}" type="text"></td>
+            </tr>
+            <tr>
+                <td>壳程设计压力MPa</td>
+                <td><input class="width_149" name="shell_design_pressure" value="{$result.shell_design_pressure}" type="text"></td>
+                <td>壳程设计温度℃</td>
+                <td><input class="width_149" name="shell_design_warm" value="{$result.shell_design_warm}" type="text"></td>
+                <td>壳程最高压力MPa</td>
+                <td><input class="width_149" name="shell_max_pressure" value="{$result.shell_max_pressure}" type="text"></td>
+            </tr>
+            <tr>
+                <td>管程设计压力MPa</td>
+                <td><input class="width_149" name="pipe_design_pressure" value="{$result.pipe_design_pressure}" type="text"></td>
+                <td>管程设计温度℃</td>
+                <td><input class="width_149" name="pipe_design_warm" value="{$result.pipe_design_warm}" type="text"></td>
+                <td>管程最高压力Mpa</td>
+                <td><input class="width_149" name="pipe_max_pressure" value="{$result.pipe_max_pressure}" type="text"></td>
+            </tr>
+            <tr>
+                <td>夹套设计压力MPa</td>
+                <td><input class="width_149" name="jacket_design_pressure" value="{$result.jacket_design_pressure}" type="text"></td>
+                <td>夹套设计温度℃</td>
+                <td><input class="width_149" name="jacket_design_warm" value="{$result.jacket_design_warm}" type="text"></td>
+                <td>夹套最高压力Mpa</td>
+                <td><input class="width_149" name="jacket_max_pressure" value="{$result.jacket_max_pressure}" type="text"></td>
+            </tr>
+            <tr>
+                <td>壳程操作压力Mpa</td>
+                <td><input class="width_149" name="shell_operation_pressure" value="{$result.shell_operation_pressure}" type="text"></td>
+                <td>壳程操作温度℃</td>
+                <td><input class="width_149" name="shell_operation_warm" value="{$result.shell_operation_warm}" type="text"></td>
+                <td>管程操作压力Mpa</td>
+                <td><input class="width_149" name="pipe_operation_pressure" value="{$result.pipe_operation_pressure}" type="text"></td>
+            </tr>
+            <tr>
+                <td>管程操作温度℃</td>
+                <td><input class="width_149" name="pipe_operation_warm" value="{$result.pipe_operation_warm}" type="text"></td>
+            </tr>
+	</table>
+
+	<p>
+	<textarea id="fields" style="width:100%;height:100px;"></textarea>
+	</p>
+	<p>
+	<textarea id="comments" style="width:100%;height:100px;"></textarea>
+	</p>
+
+</body>
+<script language="javascript">
+	var fields = '';
+	var comments = '';
+	$('input').each(function(){
+		var field = $(this).attr('name');
+		var comment = $(this).parent().prev('td').text();
+		fields+=field+',';
+		comments+=comment+',';
+	});
+	$('#fields').text(fields);
+	$('#comments').text(comments);
+	// console.log(fields);
+	// console.log(comments);
+</script>
+</html>
