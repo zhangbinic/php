@@ -84,8 +84,8 @@
 	$('input').each(function(){
 		var field = $(this).attr('name');
 		var comment = $(this).parent().prev('td').text();
-		fields+=field+',';
-		comments+=comment+',';
+		fields+="'"+field+"',";
+		comments+="'"+comment+"',";
 	});
 	$('#fields').text(fields);
 	$('#comments').text(comments);
