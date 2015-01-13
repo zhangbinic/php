@@ -57,3 +57,39 @@ $k++;
 /********输出部分********/ 
 return $e; 
 } 
+
+/**
+ * [catfilecontent description]
+ * @param  [type] $filepath [description]
+ * @return [type]           [description]
+ */
+function catfilecontent($filepath)
+{
+	$d = array();
+	header('Content-Type:text/html;charset=utf-8');
+	// $content = file_get_contents('1.xlsx');
+	// $content = file_get_contents('1.txt');
+	$content = file('1.txt');
+	// echo $content;
+	echo '<pre>';
+	// print_r($content);
+	foreach($content as $v)
+	{
+		$arr[] = str_replace('	','*',htmlspecialchars($v));
+		// echo htmlspecialchars($v);
+		// echo '<br>';
+	}
+	// print_r($arr);
+	foreach($arr as $a)
+	{
+		$b = explode('**',$a);
+		foreach($b as $c)
+		{
+			$d[] = $c;
+		}
+	}
+	$d = array_unique($d);
+	$d = array_values($d);
+
+	return $d;
+}
