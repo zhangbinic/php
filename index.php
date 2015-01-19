@@ -93,3 +93,32 @@ function catfilecontent($filepath)
 
 	return $d;
 }
+
+/**
+ * [viewtablefieldcomment description]
+ * @param  [type] $database [description]
+ * @param  [type] $table    [description]
+ * @return [type]           [description]
+ */
+function viewtablefieldcomment($database,$tables)
+{
+	header('Content-Type:text/html;charset=utf-8');
+	echo '<pre>';
+	mysql_connect('localhost:3306','root','111111');
+	mysql_query('set names utf8');
+	mysql_select_db($database);
+
+	/******************************************************************/
+	//自动化取出表结构的字段和字段的注释，还能用于表格数据显示标题使用。
+	//2014-9-2
+	$sql = "SHOW FULL COLUMNS FROM {$tables}";
+	$result = mysql_query($sql);
+	//print_r($result);
+	$fieldresult = mysql_fetch_assoc($result);
+	//print_r($fieldresult);die;
+	while($row = mysql_fetch_assoc($result)){
+		$infos[$row['Field']] = $row['Comment'];
+	}
+	return $infos;
+	//print_r($infos);die;
+}
