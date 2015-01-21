@@ -104,7 +104,7 @@ function viewtablefieldcomment($database,$tables)
 {
 	header('Content-Type:text/html;charset=utf-8');
 	echo '<pre>';
-	mysql_connect('localhost:3306','root','111111');
+	mysql_connect('localhost:3310','root','bhxz');
 	mysql_query('set names utf8');
 	mysql_select_db($database);
 
@@ -116,7 +116,11 @@ function viewtablefieldcomment($database,$tables)
 	//print_r($result);
 	$fieldresult = mysql_fetch_assoc($result);
 	//print_r($fieldresult);die;
+	$i = 0;
 	while($row = mysql_fetch_assoc($result)){
+		//$infos[$i][$row['Field']] = $row['Comment'];
+		//$infos[$i]['type'] = $row['Type'];
+		//$i++;
 		$infos[$row['Field']] = $row['Comment'];
 	}
 	return $infos;
