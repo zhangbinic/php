@@ -1,7 +1,7 @@
 <?php 
 include 'index.php';
 //查看某个数据库的某个表的字段和注释
-$arr = viewtablefieldcomment('haiyou','bh_container_parameter');
+$arr = viewtablefieldcomment('haiyou','bh_pipe_parameter');
 $keys = array_keys($arr);
 $values = array_values($arr);
 foreach($keys as $v)

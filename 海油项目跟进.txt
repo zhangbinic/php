@@ -3,6 +3,7 @@
 yuedan@bhxz.net
 lt@bhxz.net
 wangjianlong@bhxz.net
+zhaodali@bhxz.net
 
 大家好：
 海油项目进度跟进如下：
@@ -20,5 +21,7 @@ wangjianlong@bhxz.net
 4.机组台账的“技术参数”的增、删、改、导出、导入功能
 5.机组台账的“安全附件”的增、删、改、导出、导入功能
 6.腐蚀挂片详细数据的录入
+
+
 
 张斌

@@ -104,7 +104,7 @@ function viewtablefieldcomment($database,$tables)
 {
 	header('Content-Type:text/html;charset=utf-8');
 	echo '<pre>';
-	mysql_connect('localhost:3310','root','bhxz');
+	mysql_connect('192.168.123.213:3310','haiyou','haiyou');
 	mysql_query('set names utf8');
 	mysql_select_db($database);
 
