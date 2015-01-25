@@ -95,6 +95,72 @@ function catfilecontent($filepath)
 }
 
 /**
+ * 获取html的内容，然后进行正则替换
+ * [cathtmlcontent description]
+ * @param  [type] $filepath [description]
+ * @return [type]           [description]
+ */
+function cathtmlcontent($filepath)
+{
+	/*
+	2015-1-25
+	$string = cathtmlcontent('sheet001.htm');
+	//var_dump($string);die;第一次这打印出NULL值的原因是：函数必须有返回值，即return，研究了一会才搞清楚
+
+	然后用这个字符串测试了下正则，正则表达式没问题！
+	// $string = "<tr height=22 style='height:16.5pt'>
+	//   <td height=22 class=xl75 style='height:16.5pt;border-top:none'>部位名称</td>
+	//   <td colspan=8 class=xl100 style='border-right:.5pt dashed black'>　</td>
+	//  </tr>
+	// ";
+	
+	正则表达式有时候也不按照套路出牌，比如就意外的把该替换的东西给我漏了！
+	// <tr height=22 style='height:16.5pt'>
+	//   <td colspan=9 height=22 class=xl97 width=648 style='border-right:.5pt dashed black;
+	//   border-bottom:.5pt dashed black;height:16.5pt;width:486pt'>外部腐蚀机理识别</td>****
+	//  </tr>
+	
+	
+	// <tr >
+	//   <td colspan=9 >
+	//   border-bottom:.5pt dashed black;height:16.5pt;width:486pt'>外部腐蚀机理识别</td>****
+	//  </tr>
+	
+
+	$patterns = array();
+	$patterns[0] = '/height=(.*)/';
+	$patterns[1] = '/文本类型/';
+	$patterns[2] = '/日期类型/';
+	$patterns[3] = '/数字类型/';
+	$patterns[4] = '/压力容器简图/';
+
+	$replacements = array();
+	$replacements[0] = '>';
+	$replacements[1] = '<input title="" type="text" value="文本类型">';
+	$replacements[2] = '<input title="" onclick="WdatePicker();" type="text" value="日期类型">';
+	$replacements[3] = '<input title="" type="text" value="数字类型">';
+	$replacements[4] = '<img src="__Public/image/plantdemo.jpg" alt="" width="300">';
+
+	echo preg_replace($patterns, $replacements, $string);die;
+
+	echo $string;die;																		
+
+	 */
+	$content = '';
+	if(file_exists($filepath))
+	{
+		$content = file_get_contents($filepath);
+		//$content = htmlspecialchars($content);
+		//echo $content;
+		return $content;
+	}
+	else
+	{
+		p('no file');
+	}
+}
+
+/**
  * [viewtablefieldcomment description]
  * @param  [type] $database [description]
  * @param  [type] $table    [description]
@@ -125,4 +191,51 @@ function viewtablefieldcomment($database,$tables)
 	}
 	return $infos;
 	//print_r($infos);die;
+	
+	/*******************使用方法*********************/
+	//查看某个数据库的某个表的字段和注释
+	/*
+	$arr = viewtablefieldcomment('haiyou','bh_pipe_parameter');
+	$keys = array_keys($arr);
+	$values = array_values($arr);
+	foreach($keys as $v)
+	{
+		echo "'{$v}',<br>";
+	}
+	foreach($values as $v)
+	{
+		echo "'{$v}',<br>";
+	}
+	die;
+
+	//print_r($keys);die;
+	print_r($values);die;
+	print_r($arr);die;
+	
+	//通过字段类型决定出浮点型数据和整型数据的表单元素验证
+	$str = array();
+	foreach($arr as $k=>$v)
+	{
+		//echo substr($v['type'],0,6);
+		if(substr($v['type'],0,6)=='double' || substr($v['type'],0,6)=='smalli')
+		{
+			//echo 1;
+			$keys = array_keys($v);
+			$str[$k] = $keys[0];
+			//$str[$k] = $v;
+		}
+	}
+	//print_r($str);die;
+	$str = array_values($str);
+	//$str = join(',',$str);
+	//echo count($str);die;
+	$strs = '';
+	foreach($str as $v)
+	{
+		$strs.="'{$v}',";
+	}
+	echo $strs;die;
+	//print_r($str);
+
+	*/
 }
