@@ -239,3 +239,38 @@ function viewtablefieldcomment($database,$tables)
 
 	*/
 }
+
+/**
+ * 对批量的字符串写成此格式
+ * [formatformname description]
+ * @param  [type] $str [description]
+ * @return [type]      [description]
+ */
+
+/*
+得到的结果：
+$jiezhi = I('jiezhi');
+$ph = I('ph');
+$zhiliang = I('zhiliang');
+$tiji = I('tiji');
+$is_fenliqi = I('is_fenliqi');
+$is_co2 = I('is_co2');
+$is_h2s = I('is_h2s');
+$is_h2sfy = I('is_h2sfy');
+$is_h2shl = I('is_h2shl');
+$is_wsw = I('is_wsw');
+$is_guti = I('is_guti');
+$is_sjz = I('is_sjz');
+$is_sea = I('is_sea');
+*/
+
+function formatformname($str)
+{
+	$str = 'jiezhi,ph,zhiliang,tiji,is_fenliqi,is_co2,is_h2s,is_h2sfy,is_h2shl,is_wsw,is_guti,is_sjz,is_sea';
+    $arr = explode(',',$str);
+    foreach($arr as $v)
+    {
+        echo "\${$v} = I('{$v}');<br>";
+    }
+    die;
+}
