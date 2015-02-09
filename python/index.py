@@ -3,7 +3,8 @@ def print_99():
 	for i in range(1,10):
 		for j in range(1,10):
 			#print j,'x',i,'=',j*i,'\t'
-			print format(j*i,'3')
+			#miss a ",",so effect shape
+			print format(j*i,'3'),
 		print
 	#print '\n'
 # print_99();
