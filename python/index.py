@@ -22,5 +22,18 @@ def print_hello():
 def print_log10(num):
 	print math.log10(num)
 
-#print_log10(1)
+# print_log10(1)
 
+def p(n):
+	if(n-1==0):
+		return True
+	n = (n-1) * n
+	print n,
+
+#p(1)
+
+#print pow(1,0.5)
+
+# print 2**8
+
+# print 1+1
