@@ -30,10 +30,16 @@ def p(n):
 	n = (n-1) * n
 	print n,
 
-#p(1)
+p(5)
 
 #print pow(1,0.5)
 
 # print 2**8
 
 # print 1+1
+
+#list
+
+#clear windows line
+import os
+# os.system('cls')
