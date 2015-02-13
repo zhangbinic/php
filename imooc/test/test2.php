@@ -6,7 +6,7 @@
  * Time: 下午4:27
  * To change this template use File | Settings | File Templates.
  */
-namespace Test2;
+//namespace Test2;
 
 class Test2{
 

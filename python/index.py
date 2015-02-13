@@ -30,7 +30,7 @@ def p(n):
 	n = (n-1) * n
 	print n,
 
-p(5)
+# p(5)
 
 #print pow(1,0.5)
 
@@ -43,3 +43,64 @@ p(5)
 #clear windows line
 import os
 # os.system('cls')
+
+score = [['zhang',80],['li',90],['zhao',70],['wang',50]]
+# print len(score)
+# print sum(score)
+l = len(score)
+psum = 0;
+for i in range(0,l):
+	# print score[i]
+	persum=score[i]
+	psum=psum+persum[1]
+avg = psum/l
+# print psum
+# print avg
+
+# $url = 'http://www.baidu.com/s?wd=cloga';
+# $content = file_get_contents($url);
+# $content = htmlspecialchars($content);
+# echo $content;
+# 3.3s
+
+import urllib2
+url = 'http://www.baidu.com/s?wd=cloga'
+content = urllib2.urlopen(url).read()
+print content
+# 1.5s
+# avg = sum(score)
+# print avg
+
+
+# study content
+# http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/
+# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
