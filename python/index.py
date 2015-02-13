@@ -65,8 +65,8 @@ avg = psum/l
 
 import urllib2
 url = 'http://www.baidu.com/s?wd=cloga'
-content = urllib2.urlopen(url).read()
-print content
+# content = urllib2.urlopen(url).read()
+# print content
 # 1.5s
 # avg = sum(score)
 # print avg
@@ -74,7 +74,10 @@ print content
 
 # study content
 # http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/
-# 
+# print 1./5.*100
+
+
+
 
 
 
