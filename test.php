@@ -4,5 +4,14 @@
 # phpstorm中//TODO的重要性，地图标记的作用
 # todo(php.javascript),htmltodo(html)
 include 'function.php';
+set_time_limit(0);
+echo '<pre>';
 
+$directory = 'f:\www\yunketang';
+$files = scandirallfiles($directory);
 
+//print_r($files);die;
+
+$result = copyfilestodist('f:/www/yunketang',$files);
+
+var_dump($result);

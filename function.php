@@ -274,3 +274,49 @@ function formatformname($str)
     }
     die;
 }
+
+/**
+ * 扫描出此目录下的所有文件
+ * @param $directory
+ * @return array
+ */
+function scandirallfiles($directory)
+{
+  $tree = array();
+  $directory = str_replace('\\','/',$directory);
+//  $arr = scandir($directory);
+//  print_r($arr);die;
+//  $directory = '';
+//  echo $directory;die;
+  foreach(glob($directory.'/*') as $single){
+      if(is_dir($single)){
+          $tree = array_merge($tree,scandirallfiles($single));
+      }
+      else{
+          //$FileArr = pathinfo($single);
+          //if(strtolower($FileArr['extension'])=='jpg' || strtolower($FileArr['extension'])=='png' || strtolower($FileArr['extension'])=='gif'){
+              $tree[] = $single;
+          //}
+      }
+  }
+  return $tree;
+}
+
+/**
+ * 复制文件到某个目录下
+ * @param $path
+ * @param $allfiles
+ * @return bool
+ */
+function copyfilestodist($path,$allfiles)
+{
+	foreach($allfiles as $files)
+	{
+        $fileinfo = pathinfo($files);
+        $newfilename = uniqid().'.'.$fileinfo['extension'];
+//        print_r($newfilename);die;
+		copy($files,$path.'/'.$newfilename);
+//        die;
+	}
+	return true;
+}
