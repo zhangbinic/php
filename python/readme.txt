@@ -1,4 +1,4 @@
-1.
+﻿1.
 2015-2-9
 print format(j*i,'3'),
 呵呵，少了一个逗号，产生这么大的影响。
@@ -11,3 +11,5 @@ print format(j*i,'3'),
 # 在命令提示框中(cmd) : 输入 
 # path %path%;C:\Python , 按下"Enter"。 
 # 注意: C:\Python 是Python的安装目录。
+
+# path %path%;C:\phpStudy\MySQL\bin\mysqld.exe
