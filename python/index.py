@@ -79,8 +79,14 @@ url = 'http://www.baidu.com/s?wd=cloga'
 # reformat code 
 # ctrl+alt+l
 
+oldstr = r'c:\news\windows\system32'
+print oldstr
 
-
+prestr = """
+hello,World
+welcome to beijing
+"""
+# print prestr
 
 
 
