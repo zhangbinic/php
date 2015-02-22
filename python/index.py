@@ -1,3 +1,4 @@
+# -*- coding: cp936 -*-
 # print 'Hello,World'
 def print_99():
 	for i in range(1,10):
@@ -80,18 +81,36 @@ url = 'http://www.baidu.com/s?wd=cloga'
 # ctrl+alt+l
 
 oldstr = r'c:\news\windows\system32'
-print oldstr
+# print oldstr
 
 prestr = """
 hello,World
 welcome to beijing
 """
 # print prestr
+def game():
+	import random
+	guess = random.randint(1,10)
+	number = input("请输入你的幸运数字吧 : ")
+	if(number == ''):
+		number = input("你没有输入幸运数字哦 : ")
+	# print guess
+	# inputnumber = 5
+	while(guess!=number):
+		inputnumber = input("请继续输入您的幸运数字 : ")
+		if isinstance(inputnumber,int):
+			# print 'yes'
+			if(inputnumber==guess):
+				print '猜对啦'
+			else:
+				if(inputnumber>guess):
+					print '大了'
+				else:
+					print '小了'
+		else:
+			print '输入的不是数字'
 
-
-
-
-
+game()
 
 
 
