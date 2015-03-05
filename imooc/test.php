@@ -6,21 +6,22 @@
  * Time: 下午4:28
  * To change this template use File | Settings | File Templates.
  */
+namespace Test;
 require('test/test1.php');
 require('test/test2.php');
-//namespace test;
 
-class testa{
 
-    public function test()
-    {
-
-    }
-
-}
-
-testa::test();
-
+//class testa{
+//
+//    public function test()
+//    {
+//
+//    }
+//
+//}
+//
+//testa::test();
+//Test::test();
 //$test = new test1();
 //$test->test();
 

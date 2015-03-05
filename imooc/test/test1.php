@@ -6,15 +6,15 @@
  * Time: 下午4:25
  * To change this template use File | Settings | File Templates.
  */
-//namespace test;
+namespace test\Test1;
 
-class test1{
+//class test1{
 
-    public function test()
+    function test()
     {
         echo __LINE__;
     }
 
-}
+//}
 
 //test1::tests();
