@@ -1,0 +1,10 @@
+1.Google Chrome
+ctrl+j 查看下载内容的进度
+
+2.Sublime Text 2
+ctrl+p 查找文件名
+ctrl+shift+p 程序包控制
+
+3.phpstorm8
+alt+鼠标点击 支持多点触控编辑
+
