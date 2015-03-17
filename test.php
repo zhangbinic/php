@@ -8,10 +8,12 @@ set_time_limit(0);
 echo '<pre>';
 
 $directory = 'f:\www\yunketang';
-$files = scandirallfiles($directory);
+//$files = scandirallfiles($directory);
 
 //print_r($files);die;
 
-$result = copyfilestodist('f:/www/yunketang',$files);
+//$result = copyfilestodist('f:/www/yunketang',$files);
 
-var_dump($result);
+//var_dump($result);
+
+viewtablecomment();
