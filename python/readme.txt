@@ -13,3 +13,14 @@ print format(j*i,'3'),
 # 注意: C:\Python 是Python的安装目录。
 
 # path %path%;C:\phpStudy\MySQL\bin\mysqld.exe
+
+2.dir()的强大作用，显示此对象下的所有方法
+dir(str)
+dir(tuple)
+
+3.type()查看类型
+
+50条*7个sheet*30天*12个月=126000，12万6千条数据
+10个人 126万
+100个人 1260万
+1000个人 1亿2千万
