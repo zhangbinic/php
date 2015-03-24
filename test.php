@@ -6,7 +6,9 @@
 include 'function.php';
 set_time_limit(0);
 echo '<pre>';
-
+$Infos = viewtablefieldcomment('haiyou','bh_knowled_standard');
+print_r($Infos);
+die;
 $directory = 'f:\www\yunketang';
 //$files = scandirallfiles($directory);
 
