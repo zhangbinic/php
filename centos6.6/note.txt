@@ -6,3 +6,4 @@ yum -y install dump
 参考网址：
 http://zhidao.baidu.com/link?url=mvztP4oC3Gw6Bt7Fru3OBduZ_YXc5UyKOoflNcOoqFSW1e8JpRNIUylG3n2MoJghvJWVF-pQ9enBsHU6q8fJeq
 
+www.fishc.com视频教程的python3版本的讲解，幽默有趣。
