@@ -11,6 +11,8 @@ shift+esc 关闭左边的侧栏
 shift+tab 切换到项目上。
 ctrl+shift+n 查找项目内的文件
 ctrl+e 打开已关闭的历史文件
+ctrl+alt+左右箭头 切换到上次编辑的位置
+ctrl+F12 在当前类文件里快速查找方法
 
 
 4.Kugou
