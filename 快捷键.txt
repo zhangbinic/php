@@ -2,7 +2,7 @@
 ctrl+j 查看下载内容的进度
 
 2.Sublime Text 2
-ctrl+p 查找文件名
+ctrl+p 查找文件名 查找的是所有项目中是否有此文件。
 ctrl+shift+p 程序包控制
 
 3.phpstorm8
