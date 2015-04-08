@@ -4,14 +4,24 @@
 # phpstorm中//TODO的重要性，地图标记的作用
 # todo(php.javascript),htmltodo(html)
 include 'function.php';
-set_time_limit(0);
-echo '<pre>';
-$Infos = viewtablefieldcomment('haiyou','bh_pipe_unitinfo');
-print_r($Infos);
+//set_time_limit(0);
+//echo '<pre>';
+$Infos = viewtablefieldcomment('haiyou','bh_knowled_damage_mechanism');
+print_r($Infos);die;
+
+$path = "D:/Program Files/Foxmail 7.1/Foxmail.exe";
+//echo file_exists($path);die;
+system($path);
+
 die;
 $directory = 'f:\www\yunketang';
 //$files = scandirallfiles($directory);
+//
 
+/*
+'set_displayname' => $infos[$k]['set_displayname']
+
+ */
 //print_r($files);die;
 
 //$result = copyfilestodist('f:/www/yunketang',$files);

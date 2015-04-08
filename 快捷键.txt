@@ -4,6 +4,8 @@ ctrl+j 查看下载内容的进度
 2.Sublime Text 2
 ctrl+p 查找文件名 查找的是所有项目中是否有此文件。
 ctrl+shift+p 程序包控制
+Sublime Text 3编辑器能预览图片
+
 
 3.phpstorm8
 alt+鼠标点击 支持多点触控编辑
@@ -13,6 +15,7 @@ ctrl+shift+n 查找项目内的文件
 ctrl+e 打开已关闭的历史文件
 ctrl+alt+左右箭头 切换到上次编辑的位置
 ctrl+F12 在当前类文件里快速查找方法
+这个编辑器也支持在线预览图片，只不过需要双击，而Text 3是单击。
 
 
 4.Kugou
