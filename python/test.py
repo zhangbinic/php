@@ -132,6 +132,7 @@ def calcharscount2(str):
 # 读取小说里的10个常见单词
 def findstringcount(filename):
 	f = open(filename)
+
 	word_freq = {}
 	for line in f:
 		words = line.strip().split()
@@ -140,16 +141,21 @@ def findstringcount(filename):
 				word_freq[word] +=1
 			else:
 				word_freq[word] = 1
+	f.close()
 	# print word_freq
 
-	freq_word = {}
-	for word,freq in word_freq.items():
+
+	freq_word = []
+	for word in word_freq.items():
+		# print word,freq
+		freq_word.append(word)
+	# print freq_word
+
+	freq_word.sort(reverse=True)
+
+	for word,freq in freq_word:
 		print word,freq
-		# freq_word.append(freq,word)
-	# freq_word.sort(reverse=True)
-	for freq,word in freq_word:
-		print word
 # 疑问是：不能append()方法
-# findstringcount('lexicon.txt')
+findstringcount('lexicon.txt')
 
 # 2015-4-6 end
