@@ -34,7 +34,13 @@ connectdatabase($host,$user,$password);
 // 7.复制文件到某个目录下
 // copyfilestodist('D:\\',array('D:\wamp\php100\1.txt'));
 
-
+function urlcontent()
+{
+	$url = 'http://www.baidu.com/s?wd=cloga';
+	$content = file_get_contents($url);
+	$content = htmlspecialchars($content);
+	echo $content;	
+}
 
 
 //echo '<pre>';

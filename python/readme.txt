@@ -24,3 +24,7 @@ dir(tuple)
 10个人 126万
 100个人 1260万
 1000个人 1亿2千万
+
+4.python教程
+http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000
+
