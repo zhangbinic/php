@@ -4,17 +4,49 @@
 # phpstorm中//TODO的重要性，地图标记的作用
 # todo(php.javascript),htmltodo(html)
 include 'function.php';
-//set_time_limit(0);
+
+$host = '192.168.123.213:3310';
+$user = 'haiyou';
+$password = 'haiyou';
+
+$database = 'haiyou';
+
+// 0.连接数据库
+connectdatabase($host,$user,$password);
+// 1.根据标题计算excel的列显示
+// exportexcelformat();
+
+// 2.读取文本文件的内容格式化为数组
+// catfilecontent();
+
+// 3.显示文件内容
+// cathtmlcontent('function.php');
+
+// 4.显示数据表和表注释信息
+// viewtablecomment($database);
+
+// 5.显示数据表的字段和注释
+// viewtablefieldcomment($database,$table='bh_knowled_damage_mechanism');
+
+// 6.扫描此目录下的文件列表
+// scandirallfiles('D:\wamp\www\haiyou');
+
+// 7.复制文件到某个目录下
+// copyfilestodist('D:\\',array('D:\wamp\php100\1.txt'));
+
+
+
+
 //echo '<pre>';
-$Infos = viewtablefieldcomment('haiyou','bh_knowled_damage_mechanism');
-print_r($Infos);die;
 
-$path = "D:/Program Files/Foxmail 7.1/Foxmail.exe";
+//print_r($Infos);die;
+
+// $path = "D:/Program Files/Foxmail 7.1/Foxmail.exe";
 //echo file_exists($path);die;
-system($path);
+//system($path);
 
-die;
-$directory = 'f:\www\yunketang';
+//die;
+// $directory = 'f:\www\yunketang';
 //$files = scandirallfiles($directory);
 //
 
@@ -28,4 +60,4 @@ $directory = 'f:\www\yunketang';
 
 //var_dump($result);
 
-viewtablecomment();
+

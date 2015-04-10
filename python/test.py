@@ -159,3 +159,36 @@ def findstringcount(filename):
 findstringcount('lexicon.txt')
 
 # 2015-4-6 end
+
+# 字典的使用方法
+def testzidian():
+	a = {'a':1,'b':2}
+	b = {}
+	# print type(a)
+	for k,v in a.items():
+	    # print k,v
+	    b[k]=v
+	print b
+
+
+# 2015-4-10 start
+
+# 1.文件加密参考代码
+# import hashlib
+# #文件位置中的路径，请用双反斜杠，如’D:\\abc\\www\\b.msi’
+# file=’[文件位置]‘
+# md5file=open(file,’rb’)
+# md5=hashlib.md5(md5file.read()).hexdigest()
+# md5file.close()
+# print(md5)
+
+# 2.python的md5和php的md5加密字符串是一致的.
+def stringmd5(str):
+	import hashlib
+	# md5=hashlib.md5(str.encode('utf-8')).hexdigest()
+	md5=hashlib.md5(str).hexdigest()
+	print(md5)
+
+stringmd5('beyond');
+
+# 2015-4-10 end

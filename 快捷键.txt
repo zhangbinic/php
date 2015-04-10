@@ -4,6 +4,7 @@ ctrl+j 查看下载内容的进度
 2.Sublime Text 2
 ctrl+p 查找文件名 查找的是所有项目中是否有此文件。
 ctrl+shift+p 程序包控制
+ctrl+b 执行python和php的程序
 Sublime Text 3编辑器能预览图片
 
 
@@ -21,3 +22,7 @@ ctrl+F12 在当前类文件里快速查找方法
 4.Kugou
 alt+左右箭头，切换歌曲的上一曲，下一曲
 alt+上下箭头，放大或减小音量
+
+5.PyCharm
+shift+F10 执行程序
+
