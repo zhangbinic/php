@@ -26,7 +26,7 @@ connectdatabase($host,$user,$password);
 // viewtablecomment($database);
 
 // 5.显示数据表的字段和注释
-// viewtablefieldcomment($database,$table='bh_knowled_damage_mechanism');
+viewtablefieldcomment($database,$table='bh_thickness_measurement_part');
 
 // 6.扫描此目录下的文件列表
 // scandirallfiles('D:\wamp\www\haiyou');

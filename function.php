@@ -526,3 +526,29 @@ function viewarrayshow()
 }//viewarrayshow();
 
 // 2015-4-10 end
+
+// 2015-4-14 start
+function groupbyfield($info)
+{
+	//按照设备plantmatchkey取出一条记录，然后按照更新日期倒序排列。
+	$infoPlant = array();
+    foreach($info as $k => $v)
+    {
+        $infoPlant[$v['plantmatchkey']][$k] = $v;
+    }
+    //dump($info);die;
+    $infos  = array();
+    foreach($infoPlant as $v)
+    {
+        $plantunique = array();
+        foreach ($v as $key => $val)
+        {
+            $plantunique[$key] = $val['recordtime'];
+        }
+        $max_recordtime_key = array_search(max($plantunique), $plantunique);
+        $infos[] = $info[$max_recordtime_key];
+    }
+    print _r($infos);
+}//groupbyfield($info);
+
+// 2015-4-14 end
