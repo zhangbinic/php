@@ -1,4 +1,4 @@
-微信退款
+﻿微信退款
 http://www.thinkphp.cn/topic/28952.html
 
 webgrind
@@ -10,3 +10,6 @@ svn co https://github.com/zhangbinic/php.git /www/website
 
 svn linux commit code:
 svn commit -m 'comment' /www/website/trunk
+
+svn linux update code:
+svn update
