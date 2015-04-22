@@ -53,3 +53,4 @@ ctrl+l 删除一行(指的是删除查询窗中的sql语句的一行)
 ctrl+shift+x 打开消息
 
 8.SQLyog，管理mysql数据库的又一个方便的客户端软件，比navicat用户体验稍微好些。
+
