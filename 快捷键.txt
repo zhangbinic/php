@@ -3,9 +3,14 @@ ctrl+j 查看下载内容的进度
 
 2.Sublime Text 2
 ctrl+p 查找文件名 查找的是所有项目中是否有此文件。
+
 ctrl+shift+p 程序包控制
 ctrl+b 执行python和php的程序
 Sublime Text 3编辑器能预览图片
+ctrl+"["||"]" 代码缩进的后退和前进
+ctrl+左右箭头 选择字符粒度的增加，以一个单词为宽度进行移动
+ctrl+j 合并行
+ctrl+shift+n 重新打开一个编辑器，新建文件
 
 
 3.phpstorm8
@@ -26,7 +31,25 @@ alt+上下箭头，放大或减小音量
 5.PyCharm
 shift+F10 执行程序
 
-6.
+6.navicat
 ctrl+d 转换查看数据表数据到数据表结构
+ctrl+o 查看表数据 2者可以切换使用
 
-7.
+F6 打开一个mysql命令行窗口
+alt+F4 关闭当前的窗口
+
+查询窗体的快捷键：
+ctrl+q 打开查询窗口
+ctrl+w 关闭当前查询窗口
+ctrl+n 打开一个新的查询窗口 
+ctrl+/ 注释sql语句
+ctrl+shift +/  解除注释
+ctrl+r 运行查询窗口的sql语句
+ctrl+shift+r 只运行选中的sql语句
+ctrl+l 删除一行(指的是删除查询窗中的sql语句的一行)
+
+
+7.QQ
+ctrl+shift+x 打开消息
+
+8.SQLyog，管理mysql数据库的又一个方便的客户端软件，比navicat用户体验稍微好些。
