@@ -552,3 +552,25 @@ function groupbyfield($info)
 }//groupbyfield($info);
 
 // 2015-4-14 end
+
+
+// 清空数据库指定表数据：2015-4-24
+//truncatetabledata($database,$tablestr='');
+
+function truncatetabledata($database,$tablestr)
+{
+	// echo $database;
+	// 错在了必须选择数据库才可以
+	mysql_select_db($database);
+	// $tables = mysql_query("show tables");
+	// var_dump($tables);die;
+	$tablestr = "bh_accident_info,bh_alarm_confirm,bh_api_history_alarm,bh_attachment,bh_basic_unitinfo,bh_check_plan,bh_check_plan_attachment,bh_check_plan_optimization,bh_check_record,bh_check_record_attachment,bh_check_report,bh_chemical_reagent,bh_container_change_info,bh_container_change_record,bh_container_parameter,bh_container_unitinfo,bh_corrosion_chemical,bh_corrosion_tablet,bh_corrosion_tablet_change_info,bh_file_system,bh_knowled_check_case,bh_knowled_corrosion,bh_knowled_damage_mechanism,bh_knowled_rbi_oil,bh_knowled_rbi_plant,bh_knowled_rbi_set,bh_knowled_rbi_set_after,bh_knowled_rbi_set_consequence,bh_knowled_rbi_set_corrosion,bh_knowled_rbi_set_isolation,bh_modify_column_record,bh_online_check_report,bh_pipe_change_info,bh_pipe_parameter,bh_pipe_unitinfo,bh_pressure_essel,bh_pressure_pipeline,bh_report_rbilist,bh_report_rbilist_related,bh_runstate,bh_runstate_day,bh_safe_attachment,bh_thickness_count,bh_thickness_img,bh_thickness_measurement,bh_thickness_measurement_part,bh_thickness_plant,bh_thickness_result";
+	$tablearr = explode(',',$tablestr);
+	foreach($tablearr as $tablename)
+	{
+		echo "TRUNCATE {$tablename};";
+		$flag = mysql_query("TRUNCATE {$tablename};");
+		$flag = var_dump($flag);
+		echo "{$flag}<br>";
+	}
+}//truncatetabledata($database,$tablestr='');

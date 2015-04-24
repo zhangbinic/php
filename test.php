@@ -5,7 +5,7 @@
 # todo(php.javascript),htmltodo(html)
 include 'function.php';
 
-$host = '192.168.123.213:3310';
+$host = '192.168.123.63:3310';
 $user = 'haiyou';
 $password = 'haiyou';
 
@@ -13,6 +13,7 @@ $database = 'haiyou';
 
 // 0.连接数据库
 connectdatabase($host,$user,$password);
+
 // 1.根据标题计算excel的列显示
 // exportexcelformat();
 
@@ -26,13 +27,16 @@ connectdatabase($host,$user,$password);
 // viewtablecomment($database);
 
 // 5.显示数据表的字段和注释
-viewtablefieldcomment($database,$table='bh_thickness_measurement_part');
+// viewtablefieldcomment($database,$table='bh_thickness_measurement_part');
 
 // 6.扫描此目录下的文件列表
 // scandirallfiles('D:\wamp\www\haiyou');
 
 // 7.复制文件到某个目录下
 // copyfilestodist('D:\\',array('D:\wamp\php100\1.txt'));
+
+// 8.清空数据库指定表数据：2015-4-24
+// truncatetabledata($database,$tablestr='');
 
 function urlcontent()
 {
