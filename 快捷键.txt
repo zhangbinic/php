@@ -54,3 +54,9 @@ ctrl+shift+x 打开消息
 
 8.SQLyog，管理mysql数据库的又一个方便的客户端软件，比navicat用户体验稍微好些。
 
+9.fiddler
+ctrl+x 删除全部的请求
+shift+delete 删除非当前的所有请求
+r 再次请求链接
+
+

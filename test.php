@@ -36,7 +36,7 @@ connectdatabase($host,$user,$password);
 // copyfilestodist('D:\\',array('D:\wamp\php100\1.txt'));
 
 // 8.清空数据库指定表数据：2015-4-24
-// truncatetabledata($database,$tablestr='');
+truncatetabledata($database,$tablestr='');
 
 function urlcontent()
 {
