@@ -60,3 +60,23 @@ shift+delete 删除非当前的所有请求
 r 再次请求链接
 
 
+1.
+SELECT * FROM hy_fault_appearance WHERE description='其他故障';
+INSERT INTO hy_fault_reason(fault_appearance_id) VALUES(8),(54),(83),(97);
+
+http://192.168.123.64/svn/it/branches/RCBM-haiyou/Release/Setup/
+
+分享htc t528w救砖资料 可解决刷机后拨号死机 没有声音 调铃声死机
+http://bbs.tianmu.com/read.php?tid=1276743
+1.确保你的手机已官解为UNLOCKED
+2.确保你的存储卡为FAT32格式
+3.将文件放于存储卡根目录下，千万不要改名或解压
+4.设置一下手机：设置—电源—快速启动不打勾
+5.将存储卡插入手机内，手机关机状态下按住音量下+电源键，进入HBOOT
+6.手机自动检测文件，屏幕右上方有进度显示，用时较长需耐心
+7.直到出现<vol up>yes提示后，按音量上键确认开始刷入
+8.刷完按电源键重启
+9.去存储卡里删除PM60DIAG.zip
+10.结束
+http://pan.baidu.com/s/1dD1o5DB
+
