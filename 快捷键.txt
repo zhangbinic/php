@@ -59,6 +59,18 @@ ctrl+x 删除全部的请求
 shift+delete 删除非当前的所有请求
 r 再次请求链接
 
+10.Python 2.7.9 Shell快捷键
+ctrl+n 新建文件
+ctrl+o 打开文件
+ctrl+s 保存文件
+alt+F4 关闭文件
+ctrl+q 退出编辑器
+挺好的，基本通过这四个就可以不用鼠标，进行学习，测试代码了，爽歪歪。
+还有在编辑器中的一些快捷键：
+alt+n 返回最开始使用的那个命令
+alt+p 返回最近一次使用过的命令
+编写代码时支持tab键自动补全功能
+
 
 1.
 SELECT * FROM hy_fault_appearance WHERE description='其他故障';
