@@ -92,3 +92,11 @@ http://bbs.tianmu.com/read.php?tid=1276743
 10.结束
 http://pan.baidu.com/s/1dD1o5DB
 
+
+SELECT bh_runstate.* FROM(SELECT * FROM bh_runstate ORDER BY updatetime DESC,recordtime DESC) AS bh_runstate LEFT JOIN bh_api_plant on bh_api_plant.factory_displayname = bh_runstate.factory_displayname and bh_api_plant.set_displayname = bh_runstate.set_displayname WHERE bh_api_plant.users like '%,zhangbin,%' and bh_runstate.factory_displayname='文昌油田群' GROUP BY bh_runstate.factory_displayname,bh_runstate.set_displayname ORDER BY "group_sort desc, CONVERT( group_displayname USING gbk ), company_sort desc, CONVERT( company_displayname USING gbk ), factory_sort desc, CONVERT( factory_displayname USING gbk ), set_sort desc, CONVERT( set_displayname USING gbk ), server_type desc, plant_sort desc, CONVERT( plant_displayname USING gbk )" LIMIT 0,13
+
+查看mysql版本信息，指的是在mysql命令行里面查看
+cmd.exe
+mysql -h192.168.123.106 -uroot -pbhxz -P3310
+mysql> select version();
+

@@ -65,3 +65,24 @@ def wangpan():
 def se360():
 	os.startfile(r"E:\Program Files\360se6\Application\360se.exe")
 
+def work():
+	import webbrowser
+	webbrowser.open('http://192.168.123.63')
+
+def allstart():
+	wamp()
+	work()
+	phpstorm7()
+	fiddle()
+	feiq()
+	sublimetext2()
+	td()
+	qq()
+	foxmail()
+	em()
+	navicat()
+
+def killwamp():
+	os.system('taskkill /f /im wampmanager.exe')
+ 
+
