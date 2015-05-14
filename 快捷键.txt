@@ -71,6 +71,10 @@ alt+n 返回最开始使用的那个命令
 alt+p 返回最近一次使用过的命令
 编写代码时支持tab键自动补全功能
 
+11.PHPSTORM7
+1)TODO标记的重要性
+2)适合html,css,php,js文件
+
 
 1.
 SELECT * FROM hy_fault_appearance WHERE description='其他故障';
@@ -91,6 +95,7 @@ http://bbs.tianmu.com/read.php?tid=1276743
 9.去存储卡里删除PM60DIAG.zip
 10.结束
 http://pan.baidu.com/s/1dD1o5DB
+感受：多亏了这个文档，不然就得重新买个手机了，呵呵。
 
 
 查看mysql版本信息，指的是在mysql命令行里面查看
@@ -106,4 +111,15 @@ mysql> select version();
 
 
 2.删除指定目录的全部文件。
-最佳组合：先用del /q/a/f/s d:\temp\*.*删除你temp文件夹里面的所有文件，然后在用rd /s d:\temp\删除你temp文件夹下目录以及子目录
+
+最佳组合：
+先用del /q/a/f/s d:\temp\*.*删除你temp文件夹里面的所有文件，
+然后在用rd /s d:\temp\删除你temp文件夹下目录以及子目录
+
+3.windows上打开指定目录
+win+r
+盘符:\Python27
+eg:D:\wamp\www
+
+4.cmd下直接输入help，可查看所有命令的文字提示
+help time 就是查看此命令的使用说明
