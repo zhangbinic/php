@@ -1,3 +1,6 @@
+
+***********************************快捷键****************************************
+
 1.Google Chrome
 ctrl+j 查看下载内容的进度
 
@@ -75,6 +78,37 @@ alt+p 返回最近一次使用过的命令
 1)TODO标记的重要性
 2)适合html,css,php,js文件
 
+12.极速PDF阅读器
+F5直接进入阅读的全屏模式，上下翻页用PgUp,PgDn就可以
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 1.
 SELECT * FROM hy_fault_appearance WHERE description='其他故障';
@@ -98,12 +132,8 @@ http://pan.baidu.com/s/1dD1o5DB
 感受：多亏了这个文档，不然就得重新买个手机了，呵呵。
 
 
-查看mysql版本信息，指的是在mysql命令行里面查看
-cmd.exe
-mysql -h192.168.123.106 -uroot -pbhxz -P3310
-mysql> select version();
 
-命令行：
+****************************************命令行：*********************************************
 1.windows操作命令：
 重启：shutdown -r -t 5
 关机：shutdown -s -t 5
@@ -129,6 +159,13 @@ rmdir /? 查看使用说明
 d:
 cd wamp/www/haiyou
 rmdir /S /Q Logs,Runtime 直接删除这2个目录，快捷至极，比PHP或者Python还快。
+
+6.查看mysql版本信息，指的是在mysql命令行里面查看
+cmd.exe
+mysql -h192.168.123.106 -uroot -pbhxz -P3310
+mysql> select version();
+mysql> select 1;输出1，类似PHP的echo,python的print
+
 
 
 
