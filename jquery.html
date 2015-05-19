@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>重新认识jQuery框架</title>
+	<script src="jquery.js"></script>
+	<style type="text/css">
+	
+	.content{color:red;font-size:30px;}
+	
+	</style>
+</head>
+<body>
+
+
+
+</body>
+<script>
+
+	//  type="javascript" 为什么加了这个，不显示内容了？
+	  
+	$(function(){
+
+		// checkimportiframe();
+
+		helloword('欢迎来到jQuery的世界!');
+
+
+
+	});
+
+	// 1.检测是否引入了jQuery框架	
+	function checkimportiframe()
+	{
+		alert($());
+	}	
+
+	/**
+	 * 2.动态创建div，增加文本提示，颜色设置，字体大小设置，边框设置
+	 * @param  {[type]} str [description]
+	 * @return {[type]}     [description]
+	 */
+	function helloword(str)
+	{
+		// var div = $('<html><body><div></div></body></html>');
+		$('body').html('<div id="Tmp"></div><div class="content"></div><div id="Out"></div>');
+
+		// 设置文本为蓝色，24号，内外间距5px，边框为绿色，字体为微软雅黑
+		var textStyle = 
+		{
+			'color':'blue',
+			'fontSize':'24px',
+			'border':'solid 2px',
+			'margin':'5px',
+			'padding':'5px',
+			'borderColor':'green',
+			'fontFamily':'微软雅黑',
+			'display':'none',
+			'width':'98%',
+			'height':'40',
+			'cursor':'pointer'
+		};
+		// alert(1);
+		$('#Tmp,#Out,.content').html(str).css(textStyle).show(1000).hide(300000);
+		$('.content').css({});
+		
+		//点击div后，给它下一个的内容增加“加粗”属性
+		$('div').click(function(){
+			// 单个css属性可以这么写，耿飞提示。
+			$(this).addClass('curcol').next('.content').css('fontWeight','bold');
+		});
+
+		/*
+		复习js的获取文本内容：
+		<div id="Tmp">测试文本</div>
+		<div id="Out"></div>
+		*/
+		getjscopytexttodiv();
+
+		
+
+	}
+
+	/**
+	 * js的文本内容赋值事例
+	 * @return {[type]} [description]
+	 */
+	function getjscopytexttodiv()
+	{
+		var tDiv = document.getElementById('Tmp');
+		var oDiv = document.getElementById('Out');
+		var cDiv = tDiv.innerHTML;
+		oDiv.innerHTML = cDiv;
+		/*
+
+		jquery版的内容赋值操作:
+
+		var tDiv = $('#Tmp');
+		var oDiv = $('#Out');
+		var cDiv = tDiv.html();
+		oDiv.html(cDiv);
+		*/
+	}
+
+	/**
+	 * 3.创建DIV
+	 * @return {[type]} [description]
+	 */
+	function gaotwo()
+	{
+		var boarddiv = "<div style='background:white;width:100%;height:100%;z-index:999;position:absolute;top:0;margin-top:100px;'>加载中...</div>"; 
+		$(window).load(function(){ 
+			//window.alert("ok"); 
+			$(document.body).append(boarddiv); 
+		});
+	}
+
+	/**
+	 * 4.循环json格式数据:each()的使用
+	 * @return {[type]} [description]
+	 */
+	function gaoone()
+	{
+		$(function(){
+			var div = $('<div></div>');
+			// console.log(div);
+			var a = {'a':[1,2,3,4,5],'b':[1,2,3,4]};
+			$.each(a,function(index,val){
+				$.each($(val),function(index1,val1){
+					// alert(val1);
+				});
+			});
+		});
+	}
+
+</script>
+</html>

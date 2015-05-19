@@ -123,3 +123,34 @@ eg:D:\wamp\www
 
 4.cmd下直接输入help，可查看所有命令的文字提示
 help time 就是查看此命令的使用说明
+
+5.windows上rmdir的使用
+rmdir /? 查看使用说明
+d:
+cd wamp/www/haiyou
+rmdir /S /Q Logs,Runtime 直接删除这2个目录，快捷至极，比PHP或者Python还快。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
