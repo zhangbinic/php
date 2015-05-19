@@ -138,7 +138,7 @@ http://pan.baidu.com/s/1dD1o5DB
 重启：shutdown -r -t 5
 关机：shutdown -s -t 5
 时间单位为“秒”
-
+cls 清除当前dos下的页面信息
 
 2.删除指定目录的全部文件。
 
