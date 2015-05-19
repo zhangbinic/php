@@ -18,18 +18,17 @@ def get_email():
 	import re
 	pat = re.compile(r'[a-z\-\.]+@[a-z\-\.]+',re.IGNORECASE)
 	addresses = set()
-	a = ['From zhangbin <zhangbin@126.com>','From Yang <Yang@qq.com>']
+	a = ['From zhangbin <zhangbin@qq.com>','From Yang <Yang@qq.com>']
 	for line in a:
 		for address in pat.findall(line):
 			# print address
-			# 不知道怎么就过滤了第一个邮件地址
+			# 不知道怎么就过滤了第一个邮件地址，哈哈，是因为@后面正则的是字母，不包含数字而已。
 			addresses.add(address)
 	# print addresses
 	for address in sorted(addresses):
 		print address
 
 get_email()
-
 
 
 
