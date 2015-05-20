@@ -166,6 +166,17 @@ mysql -h192.168.123.106 -uroot -pbhxz -P3310
 mysql> select version();
 mysql> select 1;输出1，类似PHP的echo,python的print
 
+7.Emmet快速编写的总结：
+
+h1{文本}
+<h1>基本过滤选择器</h1>
+
+li.DefClass*3{Item $}
+
+<li class="DefClass">Item 1</li>
+<li class="DefClass">Item 2</li>
+<li class="DefClass">Item 3</li>
+
 
 
 

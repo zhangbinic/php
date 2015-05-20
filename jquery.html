@@ -4,16 +4,29 @@
 	<meta charset="UTF-8">
 	<title>重新认识jQuery框架-写最少的代码，实现最多的功能</title>
 	<script src="jquery.js"></script>
+	<script src="common.js"></script>
 	<style type="text/css">
 	
-	.content{color:red;font-size:30px;}
-	.curcol{background: blue;}	
-	.trEven{background: green;color:white; text-align: center;}
-	.trOdd{background: gray;color:white; text-align: center;}
+		.content{color:red;font-size:30px;}
+		.curcol{background: blue;}	
+		.trEven{background: green;color:white; text-align: center;}
+		.trOdd{background: gray;color:white; text-align: center;}
+		.hidden,span,.clsOne,div{display: none;}
 
 	</style>
 </head>
 <body>
+<div>BEYOND</div>
+<div id="divMid">
+	divMid
+	<span>span子标签的显示</span>
+</div>
+<div class="hidden">紧跟的div</div>
+
+<div class="clsFrame">
+	clsFrame
+	<div class="clsOne">clsOne</div>
+</div>
 
 <div class="defcol">你好</div>
 <table id="tdStu">
@@ -36,227 +49,12 @@
 	</tbody>
 </table>
 
-</body>
+
+
 <script>
 
-	//  type="javascript" 为什么加了这个，不显示内容了？
-	
-	// ********************第一章start********************
-
-	$(function(){
-
-		// checkimportiframe();
-
-		helloword('欢迎来到jQuery的世界!');
-
-
-
-	});
-
-	// 1.检测是否引入了jQuery框架	
-	function checkimportiframe()
-	{
-		alert($());
-	}	
-
-	/**
-	 * 2.动态创建div，增加文本提示，颜色设置，字体大小设置，边框设置
-	 * @param  {[type]} str [description]
-	 * @return {[type]}     [description]
-	 */
-	function helloword(str)
-	{
-		// var div = $('<html><body><div></div></body></html>');
-		$('body').append('<div id="Tmp"></div><div class="content"></div><div id="Out"></div>');
-		// $('body').html('<div id="Tmp"></div><div class="content"></div><div id="Out"></div>');覆盖页面中的html代码
-		// 设置文本为蓝色，24号，内外间距5px，边框为绿色，字体为微软雅黑
-		var textStyle = 
-		{
-			'color':'blue',
-			'fontSize':'24px',
-			'border':'solid 2px',
-			'margin':'5px',
-			'padding':'5px',
-			'borderColor':'green',
-			'fontFamily':'微软雅黑',
-			'display':'none',
-			'width':'98%',
-			'height':'40',
-			'cursor':'pointer'
-		};
-		// alert(1);
-		$('#Tmp,#Out,.content').html(str).css(textStyle).show(1000).hide(300000);
-		$('.content').css({});
-		
-		//点击div后，给它下一个的内容增加“加粗”属性
-		$('div').click(function(){
-			// 单个css属性可以这么写，耿飞提示。
-			$(this).addClass('curcol').next('.content').css('fontWeight','bold');
-		});
-
-		/*
-		复习js的获取文本内容：
-		<div id="Tmp">测试文本</div>
-		<div id="Out"></div>
-		*/
-		getjscopytexttodiv();
-
-		
-
-	}
-
-	/**
-	 * js的文本内容赋值事例
-	 * @return {[type]} [description]
-	 */
-	function getjscopytexttodiv()
-	{
-		var tDiv = document.getElementById('Tmp');
-		var oDiv = document.getElementById('Out');
-		var cDiv = tDiv.innerHTML;
-		oDiv.innerHTML = cDiv;
-		/*
-
-		jquery版的内容赋值操作:
-
-		var tDiv = $('#Tmp');
-		var oDiv = $('#Out');
-		var cDiv = tDiv.html();
-		oDiv.html(cDiv);
-		*/
-	}
-
-	/**
-	 * 3.创建DIV
-	 * @return {[type]} [description]
-	 */
-	function gaotwo()
-	{
-		var boarddiv = "<div style='background:white;width:100%;height:100%;z-index:999;position:absolute;top:0;margin-top:100px;'>加载中...</div>"; 
-		$(window).load(function(){ 
-			//window.alert("ok"); 
-			$(document.body).append(boarddiv); 
-		});
-	}
-
-	/**
-	 * 4.循环json格式数据:each()的使用
-	 * @return {[type]} [description]
-	 */
-	function gaoone()
-	{
-		$(function(){
-			var div = $('<div></div>');
-			// console.log(div);
-			var a = {'a':[1,2,3,4,5],'b':[1,2,3,4]};
-			$.each(a,function(index,val){
-				$.each($(val),function(index1,val1){
-					// alert(val1);
-				});
-			});
-		});
-	}
-
-	/**
-	 * 获取form表单的文本框，单选框，单个复选框的值
-	 * @return {[type]} [description]
-	 */
-	function getjsformdata()
-	{
-
-		var oTxtValue = document.getElementById('Text1').value;
-		// Radio1是id,Checkbox1也是id
-		var oRdoValue = (Radio1.checked)?'男':'女';
-		var oChkValue = (Checkbox1.checked)?'已婚':'未婚';
-		document.getElementById('Tip').style.display = 'block';
-		document.getElementById('Tip').innerHTML = oTxtValue+oRdoValue+oChkValue;
-
-	}
-
-	/**
-	 * 通过jquery获取form表单数据
-	 * @return {[type]} [description]
-	 */
-	function getjqueryformdata()
-	{
-
-		var oTxtValue = $('#Text1').val();
-		var oRdoValue = $('#Radio1').is(':checked')?'男':'女';
-		var oChkValue = $('#Checkbox1').is(':checked')?'已婚':'未婚';
-		$('#Tip').css('display','block').html(oTxtValue+oRdoValue+oChkValue);
-
-	}
-
-	/**
-	 * 点击时给它增加class属性
-	 * @return {[type]} [description]
-	 */
-	function clickaddclass()
-	{
-
-		$('.defcol').click(function(){
-			$(this).addClass('curcol');
-			// $(this).toggleClass('curcol');
-			// 2个是一样的点击效果
-		});
-
-	}
-
-	// ********************第一章end********************
-
-
-
-
-	// ********************第二章start********************
-
-	/**
-	 * 表格隔行换色
-	 * @return {[type]} [description]
-	 */
-	function settabletrcolor()
-	{
-		/*
-		window.onload = function(){
-			var oTb = document.getElementById('tbStu');
-			// 此处报错，不识别oTb.rows.length
-			console.log(oTb);return;
-			for(var i=0;i<oTb.rows.length-1;i++)
-			{
-				if(i%2==0)
-				{
-					oTb.rows[i].className = 'trOdd';
-				}
-			}
-		}
-		*/
-	
-		// jquery版的隔行变色
-		$('#tdStu tr:nth-child(even)').addClass('trEven');
-		$('#tdStu tr:nth-child(odd)').addClass('trOdd');
-
-	}//settabletrcolor();
-
-	function checkpage()
-	{
-		/*
-		window.onload = function(){
-			// IE11 已经不报错了，理解错了，不加if判断会报错的
-			if(document.getElementById('divT')){
-				var oDiv = document.getElementById('divT');
-				oDiv.innerHTML = 'this is a checkpage';
-			}
-		}
-		*/
-		
-		// jquery则不会报错，完善的检测机制
-		$('#divT').html('this is a checkpage');
-
-	}//checkpage();
-	
-	//看到此处时pdf提示需要付费购买，呵呵，13元的阅读费，暂时不考虑了。
-
-	
 
 
 </script>
+</body>
 </html>
