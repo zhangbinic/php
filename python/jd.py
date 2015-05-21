@@ -28,9 +28,24 @@ def get_email():
 	for address in sorted(addresses):
 		print address
 
-get_email()
+# get_email()
 
+# 取出这个网址的主域名
+def cutstr():
+	website = 'http://www.python.org'
+	websitelist = website.split('.')
+	cutstr = websitelist[len(websitelist)-2]
+	print cutstr
 
+# cutstr()
+
+# 打开此文件，可惜的是没有定位到之前打开的位置，但是鼠标点击就可以定位到阅读的位置，很奇妙。
+def pdf():
+	import os
+	# 好处是写好路径，直接命令行调用就可以了
+	os.startfile(r"D:\Python.pdf")
+
+# pdf()
 
 
 
