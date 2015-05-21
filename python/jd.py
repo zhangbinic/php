@@ -48,6 +48,21 @@ def pdf():
 # pdf()
 
 
+def hello():
+	print 'Hello,World'
+
+# 弹出一个hello的窗口
+def hellowindow():
+	import wx
+	app = wx.App()
+	win = wx.Frame(None,title='hello,world',size=(200,80))
+	button = wx.Button(win,label='Hello')
+	button.Bind(wx.EVT_BUTTON,hello)
+	win.Show()
+	app.MainLoop()
+
+hellowindow()
+
 
 
 
