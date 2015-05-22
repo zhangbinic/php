@@ -61,14 +61,59 @@ def hellowindow():
 	win.Show()
 	app.MainLoop()
 
-hellowindow()
+# hellowindow()
 
 
 
+# www.ars.usda.gov/nutrientdata
+# Navicat Premium 
+# http://www.liangchan.net/soft/softdown.asp?softid=6005
 
+def convert(value):
+	if not value:
+		value = '0'
+	return value;
 
+def sqlitedemo():
+	
+	import sqlite3
 
+	conn = sqlite3.connect('People.db')
+	conn.text_factory = str
+	curs = conn.cursor()
 
+	curs.execute('''
+
+		CREATE TABLE person(
+			email TEXT,
+			password TEXT,
+			username TEXT,
+			card TEXT,
+			userid TEXT,
+			tel TEXT,
+			address TEXT
+		)
+		
+	''')
+
+	query = 'INSERT INTO person VALUES(?,?,?,?,?,?,?)'
+
+	for line in open('12306.txt'):
+		# print line
+		fields = line.split('----')
+		vals = [convert(f) for f in fields[:len(fields)]]
+		print vals
+		# vals = []
+		# for f in fields:
+		# 	vals.append(f)
+		# # print vals
+		curs.execute(query,vals)
+		vals = []
+		
+	conn.commit()
+	conn.close()
+
+sqlitedemo()
 
 
 
