@@ -289,6 +289,45 @@
 		// 给显示的增加属性
 		// $('div:visible').css('display','block').addClass('content');
 
+		// 属性选择器
+		// $('div[id]').show(3000);
+		// $("div[title='A']").show();
+		// $("div[title!='A']").show();
+		// $("div[title^='A']").show();
+		// $("div[title$='C']").show();
+		// $("div[title*='B']").show();
+		// $("div[id='divAB'][title*='B']").css('color','red').show();
+		
+
+		// 子元素过滤器
+		// 奇怪的是下标从1开始，其他多数都是从0开始的
+		// $("li:nth-child(2)").addClass('content');
+
+		// $('li:first-child').addClass('content');
+
+		// $('li:last-child').addClass('content');
+		// // 指的是只有一个li时才处理
+		// $('li:only-child').addClass('content');
+
+		// 表单对象属性过滤选择器
+		// $('#divA').show(3000);
+		// // $('#form1 input:enabled').addClass('content');
+		// $('#form1 input:disabled').addClass('content');
+
+		// $('#divB').show(3000);
+		// $('#form1 input:checked').addClass('content');
+		// //alert($('select option:selected').text());
+		// //$(function(){
+		// 	$('#divC').show(3000);
+		// 	var selectedstr = $('select option:selected').text();
+		// 	// 刚才出不来的原因是：span默认被隐藏了，没显示导致的。
+		// 	$('#Span2').html('选中的项是：'+selectedstr).css('display','block');
+		// //});
+		
+		
+		// 奇怪的是：select被看作input的元素了，非常的诧异。
+		// var a = $('#form1 :input').length;
+
 
 	}//displaydiv();
 		

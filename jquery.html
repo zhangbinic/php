@@ -7,7 +7,7 @@
 	<script src="common.js"></script>
 	<style type="text/css">
 	
-		.content{color:red;font-size:30px;}
+		.content{color:red;font-size:30px;border: dotted 5px;}
 		.curcol{background: blue;}	
 		.trEven{background: green;color:white; text-align: center;}
 		.trOdd{background: gray;color:white; text-align: center;}
@@ -16,7 +16,7 @@
 	</style>
 </head>
 <body>
-<div>BEYOND</div>
+<!-- <div>BEYOND</div>
 <div id="divMid">
 	divMid
 	<span>span子标签的显示</span>
@@ -39,21 +39,65 @@
 	<tr>
 		<td>阴天</td>
 		<td>莫文蔚</td>
-		<td>--</td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>小秘密坏脾气</td>
 		<td>赛宁</td>
-		<td>--</td>
+		<td></td>
 	</tr>
 	</tbody>
-</table>
+</table> -->
 
+<div id="divID">ID</div>
+<div title="A">Title A</div>
+<div id="divAB" title="AB">
+	ID
+	<br/>
+	Title AB
+</div>
+<div title="ABC">Title ABC</div>
 
+<ul>
+	<li>Item 1-1</li>
+	<li>Item 1-2</li>
+	<li>Item 1-3</li>
+	<li>Item 1-4</li>
+</ul>
+<ul>
+	<li>Item 2-1</li>
+	<li>Item 2-2</li>
+	<li>Item 2-3</li>
+	<li>Item 2-4</li>
+</ul>
+<ul>
+	<li>zhangbin</li>
+</ul>
+
+<form action="" id="form1">
+	<div id="divA">
+		<input type="text" value="可用文本框">
+		<input type="text" disabled="disabled" value="不可用文本框">
+	</div>
+	<div id="divB">
+		<input type="checkbox" checked="checked" value="1">选中
+		<input type="checkbox" value="0">未选中	
+	</div>
+
+	<div id="divC">
+		<select name="" id="" multiple="multiple">
+			<option value="0">Item 0</option>
+			<option value="1" selected="selected">Item 1</option>
+			<option value="2">Item 2</option>
+			<option value="3" selected="selected">Item 3</option>
+		</select>
+		<span id="Span2"></span>
+	</div>
+</form>
 
 <script>
-
-
+// 这是针对form表单的，不是div的。
+$('#divA :text').css('display','block');
 
 </script>
 </body>
