@@ -179,7 +179,7 @@ def webpagecontent():
 	
 	from urllib import urlopen
 	webpage = urlopen('http://www.python.org')
-	
+
 	import re
 	text = webpage.read()
 	# print text
@@ -188,4 +188,12 @@ def webpagecontent():
 	m = re.search('<a href="([^"]+)" .*?>About</a>',text,re.IGNORECASE)
 	m.group(1)
 
-webpagecontent()
+# webpagecontent()
+
+# 下载网页和图片
+def downloadfile():
+
+	import urllib
+	# urllib.urlretrieve('http://www.sohu.com','c:\\python_webpage.html')
+	# urllib.urlretrieve('http://www.sohu.com/upload/images/server/icon109.gif','c:\\icon109.gif')
+
