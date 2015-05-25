@@ -113,10 +113,79 @@ def sqlitedemo():
 	conn.commit()
 	conn.close()
 
-sqlitedemo()
+# sqlitedemo()
 
 
+def sqlite3select():
+	import sqlite3
 
+	conn = sqlite3.connect('People.db')
+	# 转换中文字符
+	conn.text_factory = str
+	curs = conn.cursor()
 
+	# sql语法走的是mysql
+	query = 'select * from person limit 1'
+	curs.execute(query);
+	data = curs.fetchall()
 
+	# 查询表结构:$keys
+	names = [f[0] for f in curs.description]
+	# print names
 
+	# print curs.fetchall()
+	for row in data:
+		# 通俗的讲：类似array_combine($keys,$values)
+		for pair in zip(names,row):
+			print '%s : %s' % pair
+		print
+
+# http://archive.apache.org/dist/httpd/modpython/win/ 这是下载地址，书上的地址是老的。
+
+# *********************************socket事例start**************************
+def socketsample():
+	import socket
+
+	s = socket.socket()
+
+	host = socket.gethostname()
+	port = 1234
+	s.bind((host,port))
+
+	s.listen(5)
+	while True:
+		# 这里是逗号，不是点号，用print s.accept()打印出来得到的结果
+		c,addr = s.accept()
+		print 'Got connection form ',addr
+		c.send('Thank you for connecting')
+		c.close()
+
+# socketsample()
+
+def client():
+	import socket
+
+	s = socket.socket()
+
+	host = socket.gethostname()
+	port = 1234
+	s.connect((host,port))
+	print s.recv(1024)
+
+# client()
+# *********************************socket事例end**************************
+
+def webpagecontent():
+	
+	from urllib import urlopen
+	webpage = urlopen('http://www.python.org')
+	
+	import re
+	text = webpage.read()
+	# print text
+
+	# 奇了怪了，就是正则不出来
+	m = re.search('<a href="([^"]+)" .*?>About</a>',text,re.IGNORECASE)
+	m.group(1)
+
+webpagecontent()
