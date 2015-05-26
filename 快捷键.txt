@@ -135,7 +135,8 @@ http://bbs.tianmu.com/read.php?tid=1276743
 http://pan.baidu.com/s/1dD1o5DB
 感受：多亏了这个文档，不然就得重新买个手机了，呵呵。
 
-
+win7自带分区软件的教程：栋梁给予
+http://jingyan.baidu.com/article/fd8044fae86fb55031137ae5.html
 
 ****************************************命令行：*********************************************
 1.windows操作命令：
@@ -181,6 +182,13 @@ li.DefClass*3{Item $}
 <li class="DefClass">Item 2</li>
 <li class="DefClass">Item 3</li>
 
+8.快速打开控制面板的卸载程序命令：
+win键+r
+appwiz.cpl
+直接跳到卸载程序的界面，爽歪歪。
+
+打开文件目录，直接在地址栏输入cmd
+然后会直接跳到cmd的dos面板
 
 
 
