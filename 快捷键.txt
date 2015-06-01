@@ -214,3 +214,40 @@ appwiz.cpl
 
 
 
+****************************************参考教程****************************************
+1.PHP连接SQLServer2005
+http://blog.csdn.net/gumanren/article/details/4673674
+
+//链接数据库 
+$conn=mssql_connect('localhost','sa','kaida'); 
+mssql_select_db('center',$conn); 
+
+//query语句   
+$Query="select * from factory"; 
+$AdminResult=mssql_query($Query); 
+
+//输出结果 
+$Num=mssql_num_rows($AdminResult); 
+
+for($i=0;$i<$Num;$i++) 
+{ 
+ $Row=mssql_fetch_array($AdminResult); 
+ echo($Row[1]); 
+ echo(""); 
+}
+
+2.数据聚合的问题
+
+个体码分组
+SELECT count(*) as counts,goods_number FROM `dm_goods` GROUP BY goods_number ORDER BY counts DESC;
+
+名称分组
+SELECT count(*) as counts,goods_name FROM `dm_goods` GROUP BY goods_name ORDER BY counts DESC;
+
+商品ID分组
+SELECT count(*) as counts,goods_id FROM `dm_goods` GROUP BY goods_id ORDER BY counts DESC;
+
+
+
+
+
