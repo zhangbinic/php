@@ -284,12 +284,54 @@ SELECT count(*) as counts,goods_id FROM `dm_goods` GROUP BY goods_id ORDER BY co
 
 
 
+// 查询此商品的积分
+$where['goods_id'] = $HospProduct[$i];
+$goodsinfo = $goodsModel->field('goods_jifen,goods_name')->where($where)->find();
+$jifen = $goodsinfo['goods_jifen'];
+
+// 给user表增加积分
+$userwhere = array('username'=>$user_name);
+$updateuserdata = array('business_left'=>$jifen,'business_total'=>$jifen);
+$userModel->where($userwhere)->save($updateuserdata);
+// 给经销商增加奖励额
+$adminuser = $userModel->where($userwhere)->getField('user_deaser');
+$adminwhere = array('admin_name'=>$adminuser);
+$updateadmindata = array('reward_left'=>$jifen,'reward_total'=>$jifen);
+$adminModel->where($adminwhere)->save($updateadmindata);
 
 
 
 
+/*
+ * 领取礼品接口
+ */
+public function prizeconvert()
+{
+    $username = I('username');
+    $prizeid = I('prizeid');
 
+    $userModel = M('user');
+    $prizeModel = M('prize');
 
+    $leftfen = $userModel->where("'username='{$username}'")->getField("business_left");
+    $hasfen = $userModel->where("'username='{$username}'")->getField("business_has");
+
+    $jiangpin = $prizeModel->where('prize_id='.$prizeid)->getField("prize_integral");
+
+    if($leftfen<$jiangpin){
+
+        $this->error("积分不足");
+        echo json_encode(array('code'=>0,'result'=>'积分不足'));
+
+    }else{
+
+        $data['business_left'] = $leftfen-$jiangpin;
+        $data['business_has'] =  $hasfen+$jiangpin;
+
+        $userModel->where("'username='{$username}'")->save($data);
+        echo json_encode(array('code'=>1,'result'=>'领取成功'));
+    }
+}
 
 
 
