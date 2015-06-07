@@ -18,6 +18,9 @@ ctrl+shift+n 重新打开一个编辑器，新建文件
 2015-5-24发现的一个秘密：
 选中一个数字后，按alt+“↑↓”可增加或减少数字值，只支持数字。
 
+zhangbin2015135@gmail.com
+zhangbin135
+
 
 
 3.phpstorm8
