@@ -71,3 +71,5 @@ function urlcontent()
 //var_dump($result);
 
 
+// http://192.168.123.63/haiyou/index.php/Api/Plant/pidms_plant_info
+// http://192.168.123.64/svn/it/tags/RCBM/4.3.1.5
