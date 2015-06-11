@@ -343,8 +343,13 @@ public function prizeconvert()
 
 
 
+这行在httpd.conf中去掉#这个就行
+LoadModule headers_module modules/mod_headers.so
 
+这个紧跟在上面的这行代码的下面
+Header set X-UA-Compatible "IE=EmulateIE8"
 
+操作的作用是：让IE浏览器访问的是IE8浏览器的内容模式
 
 
 

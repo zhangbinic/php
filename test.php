@@ -9,6 +9,14 @@ $host = '192.168.123.63:3310';
 $user = 'haiyou';
 $password = 'haiyou';
 
+
+/*
+	$host = '192.168.123.106:3310';
+	$user = 'root';
+	$password = 'bhxz';
+ */
+
+
 $database = 'haiyou';
 
 // 0.连接数据库
