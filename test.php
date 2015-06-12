@@ -79,5 +79,21 @@ function urlcontent()
 //var_dump($result);
 
 
+// 40位加密
+function testsha1()
+{
+	$str = 'Hello';
+	$a = sha1($str);
+	echo strlen($a);
+}
+
+// 32位加密
+function testmd5()
+{
+	$str = 'Hello';
+	$a = md5($str);
+	echo strlen($a);	
+}
+
 // http://192.168.123.63/haiyou/index.php/Api/Plant/pidms_plant_info
 // http://192.168.123.64/svn/it/tags/RCBM/4.3.1.5
