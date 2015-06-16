@@ -131,6 +131,7 @@
                                 <button class="submit"  id="add-new-preference" type='button'><span>添加</span></button>
                             </li>
                         </ul>
+                        <!-- 这个组件dll无法注册上，不知道怎么使用？ 坑爹！-->
                         <div class="red_box" style="display: none" id="thumb-warning"><img src="images/error.gif">对不起，必须启用<a href="http://www.php.net/manual/zh/book.imagick.php" target="_blank"><b>php-imagick</b></a>扩展方可使用本功能!</div>
                     </td>
                 </tr>
@@ -183,8 +184,16 @@
 </div>
 <!-- 看不懂 -->
 <script type="text/template" id="thumb-template">
+
+    /*
+    1.必须开启asp tags才能解析吧
+    2.开启后报错，程序无法执行
+    3.没发现这个的作用
+    4.关闭了这个标签的解析
+    */
     <%= size%> - <%= window.thumbRules[rule] %>
     <a class="submit" style="padding:2px 4px" type='button'><span>x</span></a>
+
 </script>
 <script src="js/underscore-min.js"></script>
 <script src="js/backbone-min.js"></script>

@@ -315,7 +315,122 @@ $updateadmindata = array('reward_left'=>$jifen,'reward_total'=>$jifen);
 $adminModel->where($adminwhere)->save($updateadmindata);
 
 
+//1.根据商品ID，查询商品的名称，型号，积分，奖励额
 
+//2.判断提交表单的用户类型：业务员还是经销商
+
+//3.如果是业务员，积分给业务员，奖励额给所属的经销商
+
+//4.如果是经销商，则只把奖励额给此经销商，经销商有2张表：admin,user都得更新奖励额
+
+//5.报台单的提交就这些数据完善到数据表中。
+
+/*
+     * 添加账号
+     */
+    public function receiveadd(){
+        if (!IS_POST) {
+            halt('good bye');
+        }
+
+        $userdata['user_deaser'] = $userdata['username'] = $data['admin_name'] = I('name');
+        $admin_password = I('pass');
+        $confirm_pwd = I('confirm_pwd');
+        $userdata['user_unit'] = $data['admin_unit'] = I('unit');
+        $data['admin_level'] = I('level');
+        $userdata['user_name'] = $data['admin_remark'] = I('remark');
+
+        // dump($data);die;
+        if ($data['admin_name'] == '' || $admin_password == '' || $confirm_pwd == '') {
+            $this->error('提交信息不全，请填写！');
+        }
+        if ($admin_password != $confirm_pwd) {
+            $this->error('确认密码和密码不相符！');
+        }
+        
+        $isname = M('admin')->where("admin_name = '{$data['admin_name']}'")->count();
+        if ($isname >= 1) {
+            $this->error('该用户已经被占用，请换个！');
+        }
+        $isuser = M('user')->where("username = '{$data['admin_name']}'")->count();
+        if ($isuser >= 1) {
+            $this->error('该用户已经被占用，请换个！');
+        }
+
+        $userdata['password'] = $data['admin_password'] = sha1($admin_password);
+        $userdata['user_style_id'] = '经销商';
+
+        $r = M('admin')->add($data);
+        $user = M('user')->add($userdata);
+
+        if ($r&&$user) {
+            $this->success('添加成功!', U(GROUP_NAME . '/Admin/index'));
+        }else{
+            $this->error('添加失败！', U(GROUP_NAME . '/Admin/index'));
+        }
+    }
+
+编辑经销商时写数据到用户表
+
+    $AdminModel = M('admin');
+            $styleModel = M('style');
+            $list1 = $styleModel->select();
+            $this->list1=$list1;
+
+            if(IS_POST){
+                $Admindata = $AdminModel->create();
+
+                unset($Admindata['password']);
+
+                if($_POST['password'])
+                {
+
+                    $Admindata['admin_password'] = sha1($_POST['password']);
+                }
+
+                $AdminModel->where('admin_id='.$Admindata['admin_id'])->save($Admindata);
+
+                //更新用户数据，有则更新，没有则增加
+                $UserModel = M('User');
+                $userid = $Admindata['admin_name'];
+                $username = I('admin_remark');
+                $unit = I('admin_unit');
+
+                //密码修改则取表单，否则取数据表中的用户密码
+                if($_POST['password'])
+                {
+                    $Userdata['password'] = sha1($_POST['password']);
+                }
+                else
+                {
+                    $Userdata['password'] = $AdminModel->where('admin_id='.$Admindata['admin_id'])->getField('admin_password');
+                }
+
+                //获取表单的用户信息
+                $Userdata['user_name'] = $username;
+                $Userdata['user_unit'] = $unit;
+                $Userdata['user_style_id'] = '经销商';
+
+                //用户存在则更新，否则增加数据
+                $isuser = M('user')->where("username = '{$userid}'")->count();
+                if ($isuser >= 1)
+                {
+                    $UserModel->where("username = '{$userid}'")->save($Userdata);
+                }
+                else
+                {
+                    $Userdata['username'] = $userid;
+                    $UserModel->add($Userdata);
+                }
+
+                $this->success('修改成功！',U(GROUP_NAME . '/Admin/index'));
+
+            }else{
+                $id = I('get.id');
+                $list = $Admindata->where("admin_id=".$id)->select();
+                $this->list=$list;
+                $this->display();
+            }
 
 /*
  * 领取礼品接口
