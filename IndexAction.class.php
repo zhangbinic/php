@@ -105,17 +105,21 @@ class IndexAction extends Action{
         if($userflag==1)
         {
             //需要比对个体码和产品编号
-            if(empty($goodslist))
+            if($goodslist && $goodsgeti)
+            {
+                echo json_encode(array('code'=>1));
+            }
+            elseif(empty($goodslist) && $goodsgeti)
             {
                 echo json_encode(array('code'=>3,'result'=>'厂家未销售该个体号产品'));
             }
-            elseif(empty($goodsgeti))
+            elseif(empty($goodsgeti) && $goodslist)
             {
                 echo json_encode(array('code'=>2,'result'=>'该个体号已经被报台，不能重复报'));
             }
             else
             {
-                echo json_encode(array('code'=>1));       
+                echo json_encode(array('code'=>0));       
             }
         }
         else
