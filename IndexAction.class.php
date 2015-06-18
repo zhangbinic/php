@@ -87,14 +87,42 @@ class IndexAction extends Action{
         if($pagesize<=0){
             $pagesize = 10;
         }
+
+
+        // 逻辑：商品中查询商品编号，已售出商品中查询个体码，还得传递一个用户ID的参数，判断她是否对比个体码
+
         $goods_number = I('goods_number');
         $goodsModel = M("goods");
         $goodsList = $goodsModel->where("goods_number='{$goods_number}'")->limit(($page-1)*$pagesize,$pagesize)->select();
-        if($goodsList){
-            echo json_encode(array('code'=>1,'result'=>$goodsList));
-        }else{
-            echo json_encode(array('code'=>0));
+
+        $goods_geti = I('goods_geti');
+        $goodsModel = M("geti");
+        $goodsgeti = $goodsModel->where("geti_ma='{$goods_geti}'")->limit(($page-1)*$pagesize,$pagesize)->select();
+        
+        $userid = I('userid');
+        $userflag = M('user')->where('UserID='.$userid)->getField('is_geti');
+
+        if($userflag==1)
+        {
+            //需要比对个体码和产品编号
+            if(empty($goodslist))
+            {
+                echo json_encode(array('code'=>3,'result'=>'厂家未销售该个体号产品'));
+            }
+            elseif(empty($goodsgeti))
+            {
+                echo json_encode(array('code'=>2,'result'=>'该个体号已经被报台，不能重复报'));
+            }
+            else
+            {
+                echo json_encode(array('code'=>1));       
+            }
         }
+        else
+        {
+            echo json_encode(array('code'=>1));
+        }
+
     }
     /*
      * 查询商品（二维码）
