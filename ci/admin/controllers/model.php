@@ -2,7 +2,8 @@
 /**
  * DiliCMS
  *
- * 一款基于并面向CodeIgniter开发者的开源轻型后端内容管理系统.
+ * 一款基于并面向CodeIgniter开发者的开源轻型后端内容管理系统.****************************************发音：“扣的已个奈特”，哈哈！
+ * 代码点火器
  *
  * @package     DiliCMS
  * @author      DiliCMS Team
@@ -16,7 +17,7 @@
 // ------------------------------------------------------------------------
 
 /**
- * DiliCMS 内容模型管理和内容模型字段管理控制器
+ * DiliCMS “内容模型管理” 和 “内容模型字段管理” 控制器
  *
  * @package     DiliCMS
  * @subpackage  Controllers
@@ -44,8 +45,8 @@ class Model extends Admin_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->_check_permit();
-		$this->load->model('model_mdl');
+		$this->_check_permit();//检查权限
+		$this->load->model('model_mdl');//内容模型操作模型
         $this->load->helper('thumb');
 	}
 	
@@ -58,10 +59,11 @@ class Model extends Admin_Controller
 	public function view()
 	{
 		$data['list'] = $this->model_mdl->get_models();
-		$data['bread'] = make_bread(Array(
-			'模型管理' => '',
+		$data['bread'] = make_bread(Array(//创建面包屑导航
+			'模型管理' => '',//表示没链接
 			'内容模型管理' => site_url('model/view'),
 		));
+        // /admin\helpers\utils_helper.php:9
 		$this->_template('model_list', $data);
 	}
 	

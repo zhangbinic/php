@@ -37,8 +37,8 @@ class Login extends CI_Controller
 		parent::__construct();
         $this->load->database();
 		$this->load->library('session');
-		$this->settings->load('backend');
-		$this->load->switch_theme(setting('backend_theme'));
+		$this->settings->load('backend');//类似thinkphp，不用$this->assign()了。不太理解这个东西。
+		$this->load->switch_theme(setting('backend_theme'));//选择皮肤目录
 	}
 	
 	// ------------------------------------------------------------------------

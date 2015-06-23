@@ -1,9 +1,12 @@
 <?php if ( ! defined('IN_DILICMS')) exit('No direct script access allowed');?>
+
 <link rel="stylesheet" href="js/kindeditor/themes/default/default.css" />
 <script charset="utf-8" src="js/kindeditor/kindeditor-all-min.js"></script>
 <script charset="utf-8" src="js/kindeditor/lang/zh_CN.js"></script>
+
 <script src="js/DatePicker/WdatePicker.js" type="text/javascript"></script>
 <script src="js/colorPicker/colorpicker.js" type="text/javascript"></script>
+<!--创建一组联动选择框-->
 <script src="js/dili_utility/jquery.ld.js" type="text/javascript"></script>
 <link rel="stylesheet" media="screen" type="text/css" href="js/colorPicker/css/colorpicker.css" />
 <script src="js/dili_utility/content_form.js" type="text/javascript"></script>

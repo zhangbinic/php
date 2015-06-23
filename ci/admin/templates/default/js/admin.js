@@ -141,7 +141,7 @@ function selectAll(nameVal)
 	}
 	else
 	{
-		$(":checkbox[name='"+nameVal+"']").removeAttr("checked");;
+		$(":checkbox[name='"+nameVal+"']").removeAttr("checked");
 		formObj.data('selectType','none');
 	}
 }

@@ -207,5 +207,13 @@ require_once BASEPATH . '../' . 'shared/config/constant.php';
  */
 require_once BASEPATH.'core/CodeIgniter.php';
 
+/*
+ * /admin\config\routes.php:41
+ * /admin\controllers\login.php:52
+ * /admin\templates\default\sys_login.php:24
+ * 登录界面看清楚了。
+ * 总体来说，看的不错，基本看懂了，操作实践应该没有太大的问题。
+ */
+
 /* End of file index.php */
 /* Location: ./index.php */

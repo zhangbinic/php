@@ -45,13 +45,13 @@ abstract class Admin_Controller extends CI_Controller
 	{
 		parent::__construct();
         $this->load->database();
-		$this->load->library('session');
-		$this->settings->load('backend');
+		$this->load->library('session');//session存储用户登录状态
+		$this->settings->load('backend');//又出来这个奇迹般的代码了。
 		$this->load->switch_theme(setting('backend_theme'));
-        $this->_check_http_auth();
-		$this->_check_login();
-		$this->load->library('acl');
-		$this->load->library('plugin_manager');
+        $this->_check_http_auth();//指定登录名和密码
+		$this->_check_login();//检测登录状态
+		$this->load->library('acl');//权限控制的左边菜单管理 /shared\libraries\Acl.php:151
+		$this->load->library('plugin_manager');//插件管理 /shared/libraries/Plugin_manager.php 看不懂
 	}
 
     // ------------------------------------------------------------------------

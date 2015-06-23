@@ -202,5 +202,15 @@ require_once FCPATH . 'shared/config/constant.php';
  */
 require_once BASEPATH.'core/CodeIgniter.php';
 
+/*
+ * TODO
+ * D:\wamp\www\github\trunk\ci\application\config\routes.php = Copy Path = Ctrl+Shift+C = 复制绝对路径
+ * /application/config/routes.php = Copy Reference = Ctrl+Alt+Shift+C = 复制项目的相对路径
+ * 此文件的加载决定了访问的控制器是谁？
+ * D:\wamp\www\github\trunk\ci\application\controllers\welcome.php，怎么找到的呢，猜的，手册上也有说明。
+ * 它对应的模版是：D:\wamp\www\github\trunk\ci\application\views\welcome_message.php
+ * 这个问题就解决了，至于页面渲染时间怎么出来的，再说。
+ * http://192.168.123.63/github/trunk/ci/admin/ 这是后台的模块，没有放在application中，因为它是单独的一个网站后台部分。
+*/
 /* End of file index.php */
 /* Location: ./index.php */

@@ -3,6 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="<?php echo base_url().'templates/'.setting('backend_theme').'/'; ?>" />
+<!--
+
+TODO
+解释setting('backend_theme')的来源
+/admin\controllers\login.php:40
+/admin\controllers\setting.php:82
+暂且认为是从这获取的吧
+
+-->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo setting('backend_title');  ?>----Powered By DiliCMS</title>
 <link rel="stylesheet" href="images/admin.css"  type="text/css" />

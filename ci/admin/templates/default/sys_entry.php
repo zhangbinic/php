@@ -41,6 +41,12 @@
 	</div>
 	<div id="admin_left">
 		<ul class="submenu">
+<!--
+
+/shared\libraries\Acl.php:141
+但是不知道里面的 $this->left_menus 是怎么弄出来的？
+
+-->
             <?php $this->acl->show_left_menus(); ?>
         </ul>
 	</div>

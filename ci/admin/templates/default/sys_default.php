@@ -130,7 +130,9 @@
     </div>
 </div>
 <script language="javascript">
-if ( $.browser.msie && parseInt($.browser.version) < 8 ) {
-		$('#lower_ie').show();
-	}
+//检测IE8以下提示，体验不好，一些功能不好使用。
+if ( $.browser.msie && parseInt($.browser.version) < 8 )
+{
+    $('#lower_ie').show();
+}
 </script>

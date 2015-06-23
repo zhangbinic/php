@@ -1,5 +1,10 @@
 <?php if ( ! defined('IN_DILICMS')) exit('No direct script access allowed');?>
 <div class="headbar">
+<!--
+
+这块又不用动态面包屑导航了
+
+-->
 	<div class="position"><span>系统</span><span>></span><span>用户组管理</span><span>></span><span>修改用户组</span></div>
 </div>
 <div class="content_box">
@@ -18,7 +23,8 @@
                     	<ul class="attr_list">
 							<?php
 							 $role->rights = explode(',',$role->rights);
-							 foreach($rights as $key=>$v): ?>
+							 foreach($rights as $key=>$v):
+                            ?>
                             <li><label class="attr"><input type="checkbox" <?php echo in_array($key,$role->rights) ? 'checked="checked"' : ''; ?> value="<?php echo $key; ?>" name="right[]"><?php echo $v; ?></label></li>
 							<?php endforeach; ?>
                         </ul>
@@ -30,7 +36,8 @@
                     	<ul class="attr_list">
 							<?php 
 							 $role->models = explode(',',$role->models);
-							foreach($models as $key=>$v): ?>
+							foreach($models as $key=>$v): //有点像python的风格
+                            ?>
                             <li><label class="attr"><input type="checkbox" <?php echo in_array($key,$role->models) ? 'checked="checked"' : ''; ?> value="<?php echo $key; ?>" name="model[]"><?php echo $v; ?></label></li>
 							<?php endforeach; ?>
                         </ul>
@@ -42,7 +49,8 @@
                     	<ul class="attr_list">
 							<?php 
 							 $role->category_models = explode(',',$role->category_models);
-							foreach($category_models as $key=>$v): ?>
+							foreach($category_models as $key=>$v):
+                            ?>
                             <li><label class="attr"><input type="checkbox" <?php echo in_array($key,$role->category_models) ? 'checked="checked"' : ''; ?> value="<?php echo $key; ?>" name="category_model[]"><?php echo $v; ?></label></li>
 							<?php endforeach; ?>
                         </ul>
@@ -54,7 +62,8 @@
                     	<ul class="attr_list">
 							<?php 
 							 $role->plugins = explode(',',$role->plugins);
-							foreach($plugins as $key=>$v): ?>
+							foreach($plugins as $key=>$v):
+                            ?>
                             <li><label class="attr"><input type="checkbox" <?php echo in_array($key,$role->plugins) ? 'checked="checked"' : ''; ?> value="<?php echo $key; ?>" name="plugin[]"><?php echo $v; ?></label></li>
 							<?php endforeach; ?>
                         </ul>

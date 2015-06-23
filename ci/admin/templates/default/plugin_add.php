@@ -11,6 +11,12 @@
 				<tr>
 					<th> 插件标识：</th>
 					<td><?php $this->form->show('name','input',''); ?><label>*3-40位的仅包含字母数字以及下划线破折号的字符，必须唯一，将作为文件夹名。</label><?php echo form_error('name'); ?></td>
+<!--
+
+这个设置来自于哪里呢，没找到！
+
+
+-->
 				</tr>
                 <tr>
 					<th> 插件名称：</th>
