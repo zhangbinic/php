@@ -151,8 +151,6 @@ class ArticleController extends AdminController {
      */
     public function index($cate_id = null, $model_id = null, $position = null,$group_id=null)
     {
-
-
         //获取左边菜单
         $this->getMenu();
 
