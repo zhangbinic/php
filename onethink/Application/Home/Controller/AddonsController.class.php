@@ -26,7 +26,7 @@ class AddonsController extends Controller{
         C($config); //添加配置
 	}
 
-	protected $addons = null;
+	protected $Addons = null;
 
 	public function execute($_addons = null, $_controller = null, $_action = null){
 		if(C('URL_CASE_INSENSITIVE')){

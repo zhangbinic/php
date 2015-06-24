@@ -150,6 +150,8 @@ class UserController extends HomeController {
             }
 
             $Api = new UserApi();
+            // /Application\User\Common\common.php:15
+            // md5(sha1($str) . $key);这个加密模式
             $res = $Api->updateInfo($uid, $password, $data);
             if($res['status']){
                 $this->success('修改密码成功！');

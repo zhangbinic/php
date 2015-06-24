@@ -23,9 +23,19 @@ class AdminController extends Controller {
         // 获取当前用户ID
         if(defined('UID')) return ;
         define('UID',is_login());
-        if( !UID ){// 还没登录 跳转到登录页面
+
+
+        // 后台登录时屏蔽验证码
+        // /Application\Admin\Controller\PublicController.class.php:26
+        if( !UID )
+        {
+
+            // 还没登录 跳转到登录页面
             $this->redirect('Public/login');
+
         }
+
+
         /* 读取数据库中的配置 */
         $config =   S('DB_CONFIG_DATA');
         if(!$config){
@@ -125,7 +135,7 @@ class AdminController extends Controller {
      * @param array  $data  修改的数据
      * @param array  $where 查询时的where()方法的参数
      * @param array  $msg   执行正确和错误的消息 array('success'=>'','error'=>'', 'url'=>'','ajax'=>false)
-     *                     url为跳转页面,ajax是否ajax方式(数字则为倒数计时秒数)
+     *                      url为跳转页面,ajax是否ajax方式(数字则为倒数计时秒数)
      *
      * @author 朱亚杰  <zhuyajie@topthink.net>
      */
@@ -151,7 +161,7 @@ class AdminController extends Controller {
      * @param string $model 模型名称,供D函数使用的参数
      * @param array  $where 查询时的 where()方法的参数
      * @param array  $msg   执行正确和错误的消息,可以设置四个元素 array('success'=>'','error'=>'', 'url'=>'','ajax'=>false)
-     *                     url为跳转页面,ajax是否ajax方式(数字则为倒数计时秒数)
+     *                      url为跳转页面,ajax是否ajax方式(数字则为倒数计时秒数)
      *
      * @author 朱亚杰  <zhuyajie@topthink.net>
      */
@@ -165,7 +175,7 @@ class AdminController extends Controller {
      * @param string $model 模型名称,供D函数使用的参数
      * @param array  $where 查询时的where()方法的参数
      * @param array  $msg   执行正确和错误的消息 array('success'=>'','error'=>'', 'url'=>'','ajax'=>false)
-     *                     url为跳转页面,ajax是否ajax方式(数字则为倒数计时秒数)
+     *                      url为跳转页面,ajax是否ajax方式(数字则为倒数计时秒数)
      *
      * @author 朱亚杰  <zhuyajie@topthink.net>
      */
@@ -179,7 +189,7 @@ class AdminController extends Controller {
      * @param string $model 模型名称,供D函数使用的参数
      * @param array  $where 查询时的where()方法的参数
      * @param array  $msg   执行正确和错误的消息 array('success'=>'','error'=>'', 'url'=>'','ajax'=>false)
-     *                     url为跳转页面,ajax是否ajax方式(数字则为倒数计时秒数)
+     *                      url为跳转页面,ajax是否ajax方式(数字则为倒数计时秒数)
      * @author huajie  <banhuajie@163.com>
      */
     protected function restore (  $model , $where = array() , $msg = array( 'success'=>'状态还原成功！', 'error'=>'状态还原失败！')){
@@ -189,11 +199,11 @@ class AdminController extends Controller {
     }
 
     /**
-     * 条目假删除
+     * 条目“假删除”
      * @param string $model 模型名称,供D函数使用的参数
      * @param array  $where 查询时的where()方法的参数
      * @param array  $msg   执行正确和错误的消息 array('success'=>'','error'=>'', 'url'=>'','ajax'=>false)
-     *                     url为跳转页面,ajax是否ajax方式(数字则为倒数计时秒数)
+     *                      url为跳转页面,ajax是否ajax方式(数字则为倒数计时秒数)
      *
      * @author 朱亚杰  <zhuyajie@topthink.net>
      */
@@ -279,7 +289,7 @@ class AdminController extends Controller {
                         }
                         $second_urls = M('Menu')->where($where)->getField('id,url');
 
-                        if(!IS_ROOT){
+                        if(!IS_ROOT){//TODO 这个也定义了，UID就不足为奇了。
                             // 检测菜单权限
                             $to_check_urls = array();
                             foreach ($second_urls as $key=>$to_check_url) {
@@ -436,7 +446,10 @@ class AdminController extends Controller {
      */
     protected function parseDocumentList($list,$model_id=null){
         $model_id = $model_id ? $model_id : 1;
+
+        // 获取模型的具体字段属性，可以读取模型的属性，也可以读取属性表数据
         $attrList = get_model_attribute($model_id,false,'id,name,type,extra');
+
         // 对列表数据进行显示处理
         if(is_array($list)){
             foreach ($list as $k=>$data){

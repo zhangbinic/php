@@ -24,7 +24,9 @@ class ActionController extends AdminController {
         $map['status']    =   array('gt', -1);
         $list   =   $this->lists('ActionLog', $map);
         int_to_string($list);
-        foreach ($list as $key=>$value){
+        foreach ($list as $key=>$value)
+        {
+            // 根据条件字段获取数据，一个条件返回指定字段或整个表字段：值，where字段，查询的字段，3个参数
             $model_id                  =   get_document_field($value['model'],"name","id");
             $list[$key]['model_id']    =   $model_id ? $model_id : 0;
         }

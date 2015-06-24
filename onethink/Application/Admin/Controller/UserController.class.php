@@ -95,7 +95,11 @@ class UserController extends AdminController {
      * 修改密码提交
      * @author huajie <banhuajie@163.com>
      */
-    public function submitPassword(){
+    public function submitPassword()
+    {
+        // TODO 终于发现了一个问题，UID没有传递过来，怎么能修改密码成功呢？
+        // 很是疑惑！！！
+
         //获取参数
         $password   =   I('post.old');
         empty($password) && $this->error('请输入原密码');
@@ -115,6 +119,7 @@ class UserController extends AdminController {
         }else{
             $this->error($res['info']);
         }
+        // /ThinkPHP\Library\Think\Controller.class.php:198 提示的成功与失败的具体方法所在位置。
     }
 
     /**

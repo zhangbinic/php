@@ -402,22 +402,28 @@ str;
      * @param string $tablepre  自己的前缀
      * @return multitype:string 返回最终需要的sql语句
      */
-    public function sql_split($sql, $tablepre) {
+    public function sql_split($sql, $tablepre)
+    {
+        // TODO 这个挺不错，其他地方可以公用，把文件中的sql语句格式化后返回数组格式。
         if ($tablepre != "onethink_")
             $sql = str_replace("onethink_", $tablepre, $sql);
         $sql = preg_replace("/TYPE=(InnoDB|MyISAM|MEMORY)( DEFAULT CHARSET=[^; ]+)?/", "ENGINE=\\1 DEFAULT CHARSET=utf8", $sql);
 
+        // TODO 这是干什么滴？
         if ($r_tablepre != $s_tablepre)
             $sql = str_replace($s_tablepre, $r_tablepre, $sql);
+
         $sql = str_replace("\r", "\n", $sql);
         $ret = array();
         $num = 0;
         $queriesarray = explode(";\n", trim($sql));
-        unset($sql);
+
+        unset($sql);// 类似火箭助推器燃料用尽的感觉，释放它。
+
         foreach ($queriesarray as $query) {
             $ret[$num] = '';
             $queries = explode("\n", trim($query));
-            $queries = array_filter($queries);
+            $queries = array_filter($queries);//这是干什么的作用呢？
             foreach ($queries as $query) {
                 $str1 = substr($query, 0, 1);
                 if ($str1 != '#' && $str1 != '-')
@@ -685,11 +691,17 @@ str;
         $param = $addon->admin_list;
         if(!$param)
             $this->error('插件列表信息不正确');
-        extract($param);
-        if(isset($model)){
-            $addonModel = D("Addons://{$name}/{$model}");
+
+        extract($param);// TODO 查了资料，还是一知半解，不太明白。
+
+        if(isset($model))
+        {
+
+            $addonModel = D("Addons://{$name}/{$model}");// 大D还可以这么用呀，奇怪了。
+
             if(!$addonModel)
                 $this->error('模型无法实列化');
+
         }
 
         $map = array('id' => array('in', $ids) );
