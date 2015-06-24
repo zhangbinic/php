@@ -149,7 +149,10 @@ class ArticleController extends AdminController {
      * @param integer $position 推荐标志
      * @param integer $group_id 分组id
      */
-    public function index($cate_id = null, $model_id = null, $position = null,$group_id=null){
+    public function index($cate_id = null, $model_id = null, $position = null,$group_id=null)
+    {
+
+
         //获取左边菜单
         $this->getMenu();
 

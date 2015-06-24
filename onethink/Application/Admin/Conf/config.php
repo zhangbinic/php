@@ -15,7 +15,18 @@ return array(
     /* 数据缓存设置 */
     'DATA_CACHE_PREFIX'    => 'onethink_', // 缓存前缀
     'DATA_CACHE_TYPE'      => 'File', // 数据缓存类型
-    'URL_MODEL'            => 3, //URL模式
+    'URL_MODEL'            => 0, //URL模式
+
+    /*
+     *  URL模式           URL_MODEL设置
+        普通模式           0
+        PATHINFO模式      1
+        REWRITE模式       2
+        兼容模式           3
+     *  0看的更清楚一些，2暂时不起效果，可能是根目录的问题。
+     */
+
+
 
     /* 文件上传相关配置 */
     'DOWNLOAD_UPLOAD' => array(
