@@ -22,15 +22,21 @@ ctrl+shift+n 重新打开一个编辑器，新建文件
 
 
 
-3.phpstorm8
+3.phpstorm8/7
 alt+鼠标点击 支持多点触控编辑
 shift+esc 关闭左边的侧栏
 shift+tab 切换到项目上。
-ctrl+shift+n 查找项目内的文件
+ctrl+shift+n 查找项目内的文件 这个非常强大，在部分文件名上直接使用，省去鼠标点击查找文件的时间。
 ctrl+e 打开已关闭的历史文件
 ctrl+alt+左右箭头 切换到上次编辑的位置
 ctrl+F12 在当前类文件里快速查找方法
 这个编辑器也支持在线预览图片，只不过需要双击，而Text 3是单击。
+
+2015-6-23补充：
+Ctrl+Shift+C = 复制绝对路径
+Ctrl+Alt+Shift+C = 复制项目的相对路径
+
+php文件中的注释增加链接，按住ctrl+鼠标左键，能直接打开链接，类似word的功能，方便。
 
 
 4.Kugou
