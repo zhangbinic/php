@@ -575,3 +575,27 @@ function truncatetabledata($database,$tablestr)
 		echo "{$flag}<br>";
 	}
 }//truncatetabledata($database,$tablestr='');
+
+
+// 用php获取到任务管理器的实时信息 2015-6-25
+function viewtasklist()
+{
+    header('Content-Type:text/html;charset=gb2312');
+    echo '<meta http-equiv="refresh" content="9999" />';
+    //$a = '<pre>'.$last_line = system('tasklist', $retval=9).'</pre>';
+    echo '<pre>';
+    $last_line = system('tasklist', $retval);
+    echo '</pre>';
+    //echo $a;
+    /*
+    file_put_contents('tasklist.txt', file_get_contents('http://localhost/ms.php'));
+die;
+    1.新建文件来获取网址内容
+    2.间隔刷新为1秒
+    3.用Javascript实现Windows任务管理器(有待于实现！！！)
+    http://www.cnblogs.com/xiao-f/archive/2012/03/24/2415407.html
+
+    */
+    die;
+}//viewtasklist();
+

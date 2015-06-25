@@ -2,47 +2,40 @@
 
 set_time_limit(0);
 
-$goodsModel = M('Goods');
-$goodsTempModel = M('GoodsTemp');
+// $conn = mysql_connect('localhost:3310','root','bhxz');
 
-$TempInfos = $goodsTempModel->select();
+$database = "aikang";
+$table = "dm_goods_copy";
 
-foreach($TempInfos as $k=>$v)
+//$database = "test";
+//$table = "dm_goods";
+
+//var_dump($conn);die;
+mysql_select_db("{$database}");
+mysql_set_charset('utf8');
+
+$goodstempsql = "select * from dm_goods_temp limit 1000000";
+
+$TempInfos = mysql_query($goodstempsql);
+
+while($row = mysql_fetch_assoc($TempInfos))
 {
-    $info = $goodsModel->where("goods_number='{$v['goods_number']}'")->find();
-    //dump($info);
-    if($info)
-    {
-
-
-    }
-    else
-    {
-        unset($v['goods_id']);
-        $goodsModel->add($v);
-        unset($TempInfos[$k]);
-        //$TempInfos[$k] = $v;
-    }
+  //var_dump($row);
+  $goodssql = "select * from {$table} where goods_number='{$row['goods_number']}'";
+  $result = mysql_query($goodssql);
+  $goodsinfo = mysql_fetch_assoc($result);
+  //var_dump($goodsinfo);die;
+  if(!$goodsinfo)
+  {
+    unset($row['goods_id']);
+    $addsql = "INSERT INTO {$table}(goods_name,goods_bc,goods_model,goods_series,goods_class,goods_number,goods_group) VALUES('{$row['goods_name']}','{$row['goods_bc']}','{$row['goods_model']}','{$row['goods_series']}','{$row['goods_class']}','{$row['goods_number']}','{$row['goods_group']}')";
+    echo $addsql;
+    mysql_query($addsql);
+  }
+  else
+  {
+    //echo 2;
+  }
 }
-dump(count($TempInfos));die;
-
-/*
- *
-  'goods_geti' => string '001' (length=3)
-  'goods_name' => string '内衬（生物ML型）54/32' (length=28)
-  'goods_model' => string '54/32' (length=5)
-  'goods_number' => string '1310-2454' (length=9)
-  'goods_bc' => string '0369' (length=4)
-  'goods_series' => null
-  'goods_group' => string '0105产成品—耗材' (length=22)
-  'goods_class' => null
-  'goods_whether' => null
-  'goods_jifen' => string '0' (length=1)
-  'flag' => string '0' (length=1)
-  'goods_is_jinfen' => string '0' (length=1)
-  'goods_is_reward' => string '0' (length=1)
-  'goods_reward' => string '0'
- */
-//$TempInfos = array_unique($TempInfos);
-
-dump(count($TempInfos));die;
+echo 'success';
+die;
