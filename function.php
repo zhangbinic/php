@@ -581,7 +581,7 @@ function truncatetabledata($database,$tablestr)
 function viewtasklist()
 {
     header('Content-Type:text/html;charset=gb2312');
-    echo '<meta http-equiv="refresh" content="9999" />';
+    echo '<meta http-equiv="refresh" content="1" />';
     //$a = '<pre>'.$last_line = system('tasklist', $retval=9).'</pre>';
     echo '<pre>';
     $last_line = system('tasklist', $retval);
